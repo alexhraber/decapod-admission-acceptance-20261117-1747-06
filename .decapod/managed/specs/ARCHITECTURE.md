@@ -145,7 +145,11 @@ the new issue-scoped target is independent. Admission never authorizes merge.
 
 ## Codebase Attestation
 
-- Repository signal fingerprint: `4e2cacf2680f182547e1a3cee504514bba559d43ee55e96f8599980ea3113557`
+- Repository signal fingerprint: `663b46f7d815cf405a2e757e2edbef5cc0050634046946bf46e0033836bf617c`
 - Significant implementation surfaces: `README.md/` (1 files), `src/` (2 files)
 - Refreshed from the current codebase by `decapod rpc --op specs.refresh`
 <!-- decapod:codebase-attestation:end -->
+
+## Post-run publication controls
+
+Issue1758 controller-owned probes reuse the actual Pi-authored access implementation without claiming controller repair as autonomy. Preserve the fixed ten-assertion authorization oracle and independent guard. Fresh native proof must bind this separate claimed workspace. A real post-creation mutation must reject admission and quarantine the new PR as draft. Subsequent source and accepted-target changes invalidate historical proof; neither publication nor archival authorizes merge. Pi PR2 and original PR1/archive remain unchanged.
