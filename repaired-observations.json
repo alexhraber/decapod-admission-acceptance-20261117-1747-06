@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.1.0",
+  "expected_plan_digest": "sha256:52030cca2a8e08f0d841d017b4e48536007e0cd451928d17046f24fc6836694c",
+  "before": {
+    "repository": "alexhraber/decapod-admission-acceptance-20261117-1747-06",
+    "work_branch": "agent/real-forge-admission/code_01m7mm80zeddrdp8-repair",
+    "head_revision": "b386cdce5485a75e7760d4490c1f7e21db1816ca",
+    "base_branch": "main",
+    "accepted_base_revision": "3a18ec7e802ddba8c9b36d6e6eb4adaf8aa607b1",
+    "history_digest": "sha256:f46124552cdbca98af2cd6bafe9817983c34ff775e52bb71a9a5508b32174ed2",
+    "tree_digest": "sha256:b95e76360749a8ef6a06766612ec805db2a3487bf1f5b6bb7957e7580699732e",
+    "configuration_digest": "sha256:962eab16b0a1267631c05169bacc82e8e15d744a98bee222cd940f71d4380be2",
+    "workflow_digest": "sha256:efce3c38fa75fd9e5b2e4dda6436a5cbb30ace668ba35f03bb7abb1e9aba2af5",
+    "toolchain_digest": "sha256:71d5f74443b2efaa91cf89dde2145b931d3329074602ede0dd906935f6bc4c3a",
+    "candidate_digest": "sha256:7f90745c9faa37958c32cf15e0be4d28cefce66bf716002474aea855653e4773"
+  },
+  "after": {
+    "repository": "alexhraber/decapod-admission-acceptance-20261117-1747-06",
+    "work_branch": "agent/real-forge-admission/code_01m7mm80zeddrdp8-repair",
+    "head_revision": "b386cdce5485a75e7760d4490c1f7e21db1816ca",
+    "base_branch": "main",
+    "accepted_base_revision": "3a18ec7e802ddba8c9b36d6e6eb4adaf8aa607b1",
+    "history_digest": "sha256:f46124552cdbca98af2cd6bafe9817983c34ff775e52bb71a9a5508b32174ed2",
+    "tree_digest": "sha256:b95e76360749a8ef6a06766612ec805db2a3487bf1f5b6bb7957e7580699732e",
+    "configuration_digest": "sha256:962eab16b0a1267631c05169bacc82e8e15d744a98bee222cd940f71d4380be2",
+    "workflow_digest": "sha256:efce3c38fa75fd9e5b2e4dda6436a5cbb30ace668ba35f03bb7abb1e9aba2af5",
+    "toolchain_digest": "sha256:71d5f74443b2efaa91cf89dde2145b931d3329074602ede0dd906935f6bc4c3a",
+    "candidate_digest": "sha256:7f90745c9faa37958c32cf15e0be4d28cefce66bf716002474aea855653e4773"
+  },
+  "facts": {
+    "event": "pull_request",
+    "target_branch": "main",
+    "changed_paths": [
+      ".decapod/governance.json",
+      ".decapod/managed/specs/.manifest.json",
+      ".decapod/managed/specs/ARCHITECTURE.md",
+      ".decapod/managed/specs/INTENT.md",
+      ".decapod/managed/specs/INTERFACES.md",
+      ".decapod/managed/specs/OPERATIONS.md",
+      ".decapod/managed/specs/README.md",
+      ".decapod/managed/specs/SECURITY.md",
+      ".decapod/managed/specs/SEMANTICS.md",
+      ".decapod/managed/specs/VALIDATION.md"
+    ]
+  },
+  "results": [
+    {
+      "key": {
+        "provider": "native",
+        "workflow": ".decapod/config.toml",
+        "job": "guard-contract",
+        "matrix": {},
+        "profile": "repo.pr-readiness.v1"
+      },
+      "definition_digest": "sha256:dde2b5d528b0f40b3c4b5603d40e2d1f3414a54951e8f3ba7aa5ece0309ba2c4",
+      "invocation_digest": "sha256:613edf2259d299964886ed48957a27dcb0f2c7416cf5d2b5935c2d53e924f102",
+      "toolchain_digest": "sha256:c747cf748a99694528700f6f82ab4cb19557338ba1f0e2c5b3af97f4c304b5c2",
+      "executor": "native",
+      "identity": {
+        "repository": "alexhraber/decapod-admission-acceptance-20261117-1747-06",
+        "work_branch": "agent/real-forge-admission/code_01m7mm80zeddrdp8-repair",
+        "head_revision": "b386cdce5485a75e7760d4490c1f7e21db1816ca",
+        "base_branch": "main",
+        "accepted_base_revision": "3a18ec7e802ddba8c9b36d6e6eb4adaf8aa607b1",
+        "history_digest": "sha256:f46124552cdbca98af2cd6bafe9817983c34ff775e52bb71a9a5508b32174ed2",
+        "tree_digest": "sha256:b95e76360749a8ef6a06766612ec805db2a3487bf1f5b6bb7957e7580699732e",
+        "configuration_digest": "sha256:962eab16b0a1267631c05169bacc82e8e15d744a98bee222cd940f71d4380be2",
+        "workflow_digest": "sha256:efce3c38fa75fd9e5b2e4dda6436a5cbb30ace668ba35f03bb7abb1e9aba2af5",
+        "toolchain_digest": "sha256:71d5f74443b2efaa91cf89dde2145b931d3329074602ede0dd906935f6bc4c3a",
+        "candidate_digest": "sha256:7f90745c9faa37958c32cf15e0be4d28cefce66bf716002474aea855653e4773"
+      },
+      "observation": {
+        "kind": "executed",
+        "execution_id": "native:67372:native-proof-KQzIbJ",
+        "conclusion": "success",
+        "exit_code": 0,
+        "output_digest": "sha256:f68776d1eeb3f3379c58834061add0b44494f3ccbebb213a9eeb35a904b8595e",
+        "artifact_digest": null
+      }
+    },
+    {
+      "key": {
+        "provider": "native",
+        "workflow": ".decapod/config.toml",
+        "job": "payload-contract",
+        "matrix": {},
+        "profile": "repo.pr-readiness.v1"
+      },
+      "definition_digest": "sha256:6cdaa5be7a94ad267c90865d6b04e931536c37e4b7364e8302a4cdda9d767221",
+      "invocation_digest": "sha256:11f7b8316eb3c77fad35407e55ebd4c4d91a2a59795071da15265ad306009620",
+      "toolchain_digest": "sha256:c747cf748a99694528700f6f82ab4cb19557338ba1f0e2c5b3af97f4c304b5c2",
+      "executor": "native",
+      "identity": {
+        "repository": "alexhraber/decapod-admission-acceptance-20261117-1747-06",
+        "work_branch": "agent/real-forge-admission/code_01m7mm80zeddrdp8-repair",
+        "head_revision": "b386cdce5485a75e7760d4490c1f7e21db1816ca",
+        "base_branch": "main",
+        "accepted_base_revision": "3a18ec7e802ddba8c9b36d6e6eb4adaf8aa607b1",
+        "history_digest": "sha256:f46124552cdbca98af2cd6bafe9817983c34ff775e52bb71a9a5508b32174ed2",
+        "tree_digest": "sha256:b95e76360749a8ef6a06766612ec805db2a3487bf1f5b6bb7957e7580699732e",
+        "configuration_digest": "sha256:962eab16b0a1267631c05169bacc82e8e15d744a98bee222cd940f71d4380be2",
+        "workflow_digest": "sha256:efce3c38fa75fd9e5b2e4dda6436a5cbb30ace668ba35f03bb7abb1e9aba2af5",
+        "toolchain_digest": "sha256:71d5f74443b2efaa91cf89dde2145b931d3329074602ede0dd906935f6bc4c3a",
+        "candidate_digest": "sha256:7f90745c9faa37958c32cf15e0be4d28cefce66bf716002474aea855653e4773"
+      },
+      "observation": {
+        "kind": "executed",
+        "execution_id": "native:67372:native-proof-T3zJz9",
+        "conclusion": "success",
+        "exit_code": 0,
+        "output_digest": "sha256:e98674669d4807e1aa5b02ad1f41d1b05c6d839dfc9cdc1e984206a338c7502c",
+        "artifact_digest": null
+      }
+    }
+  ]
+}
