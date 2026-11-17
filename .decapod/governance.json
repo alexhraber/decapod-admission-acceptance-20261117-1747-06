@@ -28,6 +28,11 @@
       "proof_refs": [
         "/tmp/1758-baseline.json"
       ]
+    },
+    {
+      "id": "baseline-spec-sections",
+      "summary": "Align authored intent headings with required spec schema; access remains unchanged",
+      "input_digest": "sha256:5bc33e75721064b4762b5959c5e2d79ed1bfa04f8f4c35279e043d579b007571"
     }
   ],
   "intents": {
