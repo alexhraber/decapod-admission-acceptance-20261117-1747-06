@@ -12,7 +12,10 @@
     "repository-reads": {
       "statement": "Active same-organization actors need repository ownership or an exact repository grant",
       "falsifier": "Any accepted authorization assertion fails after repair",
-      "status": "open"
+      "status": "supported",
+      "proof_refs": [
+        "evidence/1758-repair/validation.json"
+      ]
     }
   },
   "checkpoints": [
@@ -41,6 +44,14 @@
       "proof_refs": [
         "evidence/1758-baseline/native-0.stderr",
         "evidence/1758-baseline/validation.json"
+      ]
+    },
+    {
+      "id": "repair-proof",
+      "summary": "Retain passing repair proof and regression trajectory; final candidate requires fresh validation",
+      "input_digest": "sha256:e638b39eccecf9afb058b890c7624f2683aebd748b2182545bb543a633a7576a",
+      "proof_refs": [
+        "evidence/1758-repair/validation.json"
       ]
     }
   ],
@@ -119,14 +130,22 @@
       "active_boundaries": [
         "Current claimed task and isolated work branch"
       ],
-      "artifact_hash": "sha256:301a3281beddc04673755cb66ea5fea1182576bfa4686aa50f0196ad89110fa7",
+      "artifact_hash": "sha256:073fafc9b8c423e865c4122c10c0d9ea9dfceca4ab92f7c31998c882b19bc24a",
       "checks": [
+        {
+          "name": "independent_source_guard",
+          "status": "passed"
+        },
+        {
+          "name": "repaired_authorization",
+          "status": "passed"
+        },
         {
           "name": "seeded_authorization_baseline",
           "status": "failed"
         }
       ],
-      "current_phase": "implementation",
+      "current_phase": "validation",
       "custody": {
         "events": [
           {
@@ -154,10 +173,17 @@
             "intent_id": "intent:change_01M7NQHNNABMYRWNK2JWNKJ7XY",
             "kind": "trajectory_step_recorded",
             "sequence": 5
+          },
+          {
+            "detail": "trajectory:branch_01M7NQHNQY1TWS7SNJ9DX19Z73",
+            "event_id": "event:6",
+            "intent_id": "intent:change_01M7NQHNNABMYRWNK2JWNKJ7XY",
+            "kind": "trajectory_step_recorded",
+            "sequence": 6
           }
         ],
         "knowledge_candidates": [],
-        "next_sequence": 5,
+        "next_sequence": 6,
         "schema_version": "1.0.0",
         "trajectories": {
           "branch_01M7NQHNQY1TWS7SNJ9DX19Z73": {
@@ -196,6 +222,21 @@
                 "validation_findings": [
                   "Accepted command executed on unchanged access source at bb1563c and failed missing repository grant: true !== false. Not a timeout or missing prerequisite."
                 ]
+              },
+              {
+                "action": "loop:authorization-regression:2",
+                "custody_event_id": "event:6",
+                "observations": [],
+                "proof_refs": [
+                  "evidence/1758-repair/validation.json",
+                  "evidence/1758-repair/native-0.stdout",
+                  "evidence/1758-repair/native-1.stdout"
+                ],
+                "scope": [
+                  "root"
+                ],
+                "sequence": 6,
+                "validation_findings": []
               }
             ]
           }
@@ -207,7 +248,8 @@
       "destination": "pull request",
       "evidence": [
         "evidence/1758-baseline/native-0.stderr",
-        "evidence/1758-baseline/validation.json"
+        "evidence/1758-baseline/validation.json",
+        "evidence/1758-repair/validation.json"
       ],
       "inspected_files": [
         ".decapod/config.toml",
@@ -231,6 +273,23 @@
             "evidence/1758-baseline/validation.json"
           ],
           "status": "retrying",
+          "trajectory_id": "branch_01M7NQHNQY1TWS7SNJ9DX19Z73",
+          "trigger": "agent"
+        },
+        {
+          "attempt": 2,
+          "custody_event_id": "event:6",
+          "grader_result": "pass",
+          "intent_id": "intent:change_01M7NQHNNABMYRWNK2JWNKJ7XY",
+          "loop_id": "authorization-regression",
+          "loop_type": "verification",
+          "mutation_proposal": "none",
+          "proof_refs": [
+            "evidence/1758-repair/native-0.stdout",
+            "evidence/1758-repair/native-1.stdout",
+            "evidence/1758-repair/validation.json"
+          ],
+          "status": "passed",
           "trajectory_id": "branch_01M7NQHNQY1TWS7SNJ9DX19Z73",
           "trigger": "agent"
         }
