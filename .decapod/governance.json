@@ -1,25 +1,32 @@
 {
   "schema_version": "1.0.0",
   "baseline": {
-    "accepted_commit": "75530fa41693b2b6c062c366edf956b0e6d1eeb0"
+    "accepted_commit": "4b7f3b05637120a2ac6d638c46a13288fa6d74ce"
   },
   "change": {
-    "id": "change_01M7NNJMQFJREGQY86XJ7S77BA",
-    "base_commit": "75530fa41693b2b6c062c366edf956b0e6d1eeb0",
+    "id": "change_01M7NRMH0F0QY67QXKZYXY33CY",
+    "base_commit": "4b7f3b05637120a2ac6d638c46a13288fa6d74ce",
     "target_base": "origin/acceptance/1757/launch-20261117-01-base"
   },
   "checkpoints": [
     {
-      "id": "fixture-1757-accepted-projections",
-      "summary": "Prepare current native projections and accepted independent source assertions without repairing the seeded authorization defect",
-      "input_digest": "sha256:ddc95b73581b0a786d3afc645934646a6c22cd8692f97ec789d7c8b816cb2e14",
-      "proof_refs": [
-        "issue:1757:operator-fixture-preparation"
-      ]
+      "id": "controls-initial-candidate",
+      "summary": "Issue1758 controlled post-run publication and staleness test; does not alter or narrate autonomous Pi execution",
+      "input_digest": "sha256:9b9c3a927bfafb9ba125a8e3a09db0d7d3dda8b371f8fcf43fbb8775e91f0f50"
+    },
+    {
+      "id": "controls-recover-quarantined-candidate",
+      "summary": "Issue1758 controlled post-run publication and staleness test; does not alter or narrate autonomous Pi execution",
+      "input_digest": "sha256:9b9c3a927bfafb9ba125a8e3a09db0d7d3dda8b371f8fcf43fbb8775e91f0f50"
+    },
+    {
+      "id": "controls-restore-source-projections",
+      "summary": "Issue1758 controlled post-run publication and staleness test; does not alter or narrate autonomous Pi execution",
+      "input_digest": "sha256:7a0c1f431e54937ae76db24b7d5788b4f71fda3c2fef0e0b2d00991931405c05"
     }
   ],
   "intents": {
-    "intent:change_01M7NNJMQFJREGQY86XJ7S77BA": {
+    "intent:change_01M7NRMH0F0QY67QXKZYXY33CY": {
       "acceptance_criteria": [],
       "assumptions": [],
       "boundaries": [
@@ -29,11 +36,11 @@
         "root"
       ],
       "created_sequence": 1,
-      "id": "intent:change_01M7NNJMQFJREGQY86XJ7S77BA",
+      "id": "intent:change_01M7NRMH0F0QY67QXKZYXY33CY",
       "out_of_scope": [],
       "proof_requirements": [],
-      "raw_intent": "Prepare issue 1757 isolated acceptance projections",
-      "refined_intent": "Prepare issue 1757 isolated acceptance projections",
+      "raw_intent": "Execute post-run publication quarantine and stale-evidence controls",
+      "refined_intent": "Execute post-run publication quarantine and stale-evidence controls",
       "status": "refined",
       "updated_sequence": 3
     }
@@ -41,12 +48,12 @@
   "sections": {
     "plan": {
       "constraints": {
-        "file_touch_budget": null,
+        "file_touch_budget": 20,
         "forbidden_paths": []
       },
       "deferred_questions": [],
       "human_questions": [],
-      "intent": "Prepare issue 1757 operator-seeded acceptance baseline with complete current projections and independently fixed assertions. Preserve the deliberately failing access implementation for the actual Pi experiment; do not supply its repair. All historical refs and PR 1 remain immutable.",
+      "intent": "Execute labelled controller-owned kernel controls after completed real Pi run: preserve its source and PR2; prove draft quarantine after real creation, stale-source rejection and target invalidation on isolated refs",
       "phases": [],
       "proof_hooks": [
         "decapod validate"
@@ -56,53 +63,53 @@
         {
           "disposition": "updated",
           "path": ".decapod/managed/specs/ARCHITECTURE.md",
-          "reason": "Operator-reviewed accepted repository access assertions and intentionally seeded defect; actual agent must diagnose and repair after a genuine failed required check.",
-          "reviewed_code_fingerprint": "4e2cacf2680f182547e1a3cee504514bba559d43ee55e96f8599980ea3113557",
-          "spec_material_hash": "0bacc73a3aa21c07fd972e4c0a34be876bf2ce3712d57f97804d93b41aac1924"
+          "reason": "Reviewed separate post-run controller controls, fixed accepted oracle, private capture, isolated branch and truthful quarantine/admission distinction",
+          "reviewed_code_fingerprint": "663b46f7d815cf405a2e757e2edbef5cc0050634046946bf46e0033836bf617c",
+          "spec_material_hash": "c45f4019de2d2eb1d108363fae24bbd342a27ada38ef48684ee32df1a6781aa7"
         },
         {
           "disposition": "updated",
           "path": ".decapod/managed/specs/INTERFACES.md",
-          "reason": "Operator-reviewed accepted repository access assertions and intentionally seeded defect; actual agent must diagnose and repair after a genuine failed required check.",
-          "reviewed_code_fingerprint": "4e2cacf2680f182547e1a3cee504514bba559d43ee55e96f8599980ea3113557",
-          "spec_material_hash": "ccccb42214f1643dbc9e332a827ab2420ec64430d22bb1e95a8c9830425e2cf5"
+          "reason": "Reviewed separate post-run controller controls, fixed accepted oracle, private capture, isolated branch and truthful quarantine/admission distinction",
+          "reviewed_code_fingerprint": "663b46f7d815cf405a2e757e2edbef5cc0050634046946bf46e0033836bf617c",
+          "spec_material_hash": "c9541136c9256af16ab47afc22d203c76de9dcc0fdb4b4a7841daba44b91920a"
         },
         {
           "disposition": "updated",
           "path": ".decapod/managed/specs/SECURITY.md",
-          "reason": "Operator-reviewed accepted repository access assertions and intentionally seeded defect; actual agent must diagnose and repair after a genuine failed required check.",
-          "reviewed_code_fingerprint": "4e2cacf2680f182547e1a3cee504514bba559d43ee55e96f8599980ea3113557",
-          "spec_material_hash": "fadcfb12e190e89e4a18799a0f6aca5c10828436fe2d0c2b8c090224b90a9399"
+          "reason": "Reviewed separate post-run controller controls, fixed accepted oracle, private capture, isolated branch and truthful quarantine/admission distinction",
+          "reviewed_code_fingerprint": "663b46f7d815cf405a2e757e2edbef5cc0050634046946bf46e0033836bf617c",
+          "spec_material_hash": "1f4ac252b1028447f97038178984b7638ee660bbbc9747c73e2adbe0d52e7941"
         }
       ],
       "state": "APPROVED",
       "stop_conditions": [],
-      "title": "Prepare issue 1757 isolated acceptance projections",
+      "title": "Execute post-run publication quarantine and stale-evidence controls",
       "todo_ids": [
-        "bugs_01m7nnj7zsmrrb7v"
+        "code_01m7nrm4mncp7d1z"
       ],
       "unknowns": [],
       "unresolved_contradictions": [],
-      "updated_at": "1794949877Z"
+      "updated_at": "1794953088Z"
     },
     "trajectory": {
       "active_boundaries": [
         "Current claimed task and isolated work branch"
       ],
-      "artifact_hash": "sha256:2c174ccb4829cf7cfb33269066f80b30f15f630f1df8283abe0ed017e9c86cf8",
+      "artifact_hash": "sha256:fdb293c33edc0e2a364dbc20c9ac657753b4849854a857912ba2a3df7466c85b",
       "checks": [],
       "current_phase": "intent",
       "custody": {
         "events": [
           {
             "event_id": "event:2",
-            "intent_id": "intent:change_01M7NNJMQFJREGQY86XJ7S77BA",
+            "intent_id": "intent:change_01M7NRMH0F0QY67QXKZYXY33CY",
             "kind": "created",
             "sequence": 2
           },
           {
             "event_id": "event:3",
-            "intent_id": "intent:change_01M7NNJMQFJREGQY86XJ7S77BA",
+            "intent_id": "intent:change_01M7NRMH0F0QY67QXKZYXY33CY",
             "kind": "refined",
             "sequence": 3
           }
@@ -116,7 +123,7 @@
       "destination": "pull request",
       "evidence": [],
       "inspected_files": [],
-      "intent_id": "intent:change_01M7NNJMQFJREGQY86XJ7S77BA",
+      "intent_id": "intent:change_01M7NRMH0F0QY67QXKZYXY33CY",
       "modified_files": [],
       "next_transitions": [
         "Refine plan and declare falsifiable checks"
@@ -124,10 +131,10 @@
       "repo_scope": [
         "root"
       ],
-      "run_id": "branch_01M7NNJMSKWRJGYAPMAYSDBE4B",
+      "run_id": "branch_01M7NRMH37YEHWKP55WNA6BXRJ",
       "schema_version": "1.1.0",
       "shortcut_risk_signals": [],
-      "task_id": "bugs_01m7nnj7zsmrrb7v",
+      "task_id": "code_01m7nrm4mncp7d1z",
       "tool_calls": [],
       "unresolved_assumptions": []
     }
