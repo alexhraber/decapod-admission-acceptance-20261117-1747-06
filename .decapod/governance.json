@@ -20,6 +20,14 @@
       "id": "baseline-setup",
       "summary": "Establish governed scope before measuring unchanged seeded access behavior",
       "input_digest": "sha256:8ceb837d30f8bd7b914570fa2eda3c7128b9c07e4a384b453251d15394ad4830"
+    },
+    {
+      "id": "baseline-spec",
+      "summary": "Document actual product and required baseline without changing access behavior",
+      "input_digest": "sha256:990ad3537d5eed06fabe4a86a56e68774ecedb8061037af83c3c845efe0cb3f0",
+      "proof_refs": [
+        "/tmp/1758-baseline.json"
+      ]
     }
   ],
   "intents": {
