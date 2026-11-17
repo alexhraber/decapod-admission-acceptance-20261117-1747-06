@@ -107,6 +107,14 @@ export enum ApiErrorCode {
 - [ ] Backward compatibility or migration instructions are published.
 
 
+## Implemented Library Contract
+
+`require('./src/access.cjs').canRead(actor, repository)` returns a boolean synchronously. The caller supplies a repository with `id`, `organizationId`, and `ownerId`; an actor is null or a record with `id`, `organizationId`, `active`, and optional `repositoryIds` (array of repository IDs). Identity fields are caller-validated, trusted records rather than untrusted authentication claims.
+
+`active` must equal true, and actor organization must equal repository organization. Once those conditions hold, matching `ownerId` permits access without a grant array; otherwise `repositoryIds` must be an array containing the exact repository ID. Absent grants deny non-owners; another repository's grant is not transferable. Null actors, revoked owners and outsiders are denied. The export name and argument order are unchanged; the intentionally tightened decision is the compatibility change.
+
+There is no mutation, asynchronous result, network error, retry protocol or application event. Invalid repository records are outside this interface's accepted input contract. The fixed proof literals in `.decapod/config.toml` cover ten authorization scenarios, while the independent guard remains a separate required command.
+
 ## Accepted repository access contract
 
 The application exports canRead(actor, repository) from src/access.cjs. Active
@@ -124,7 +132,7 @@ the new issue-scoped target is independent. Admission never authorizes merge.
 
 ## Codebase Attestation
 
-- Repository signal fingerprint: `4e2cacf2680f182547e1a3cee504514bba559d43ee55e96f8599980ea3113557`
+- Repository signal fingerprint: `663b46f7d815cf405a2e757e2edbef5cc0050634046946bf46e0033836bf617c`
 - Significant implementation surfaces: `README.md/` (1 files), `src/` (2 files)
 - Refreshed from the current codebase by `decapod rpc --op specs.refresh`
 <!-- decapod:codebase-attestation:end -->

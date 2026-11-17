@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.1.0",
+  "expected_plan_digest": "sha256:9f028628cfb34ceca24c59c0e8aa306d1a8669f26b5001bf4c42a791207c9413",
+  "before": {
+    "repository": "alexhraber/decapod-admission-acceptance-20261117-1747-06",
+    "work_branch": "agent/pi-1758-run01/feat_01m7nqgz4z48b3a6-repository-read",
+    "head_revision": "bb1563c98fa8fb8845a24d76d9c722e9e4078659",
+    "base_branch": "acceptance/1757/launch-20261117-01-base",
+    "accepted_base_revision": "4b7f3b05637120a2ac6d638c46a13288fa6d74ce",
+    "history_digest": "sha256:420bdfb9a2da7105815fa926d13dce30e74e92701244e27a9382539a0db2b307",
+    "tree_digest": "sha256:b48ea106289a44b23f308c65ae7eeb4d1a22315141c3b51cd24218536a434381",
+    "configuration_digest": "sha256:c36ac9aefedcbbd570e35adba8a54af47d752878fab1c75a35d237611cce8f37",
+    "workflow_digest": "sha256:ec705cf11c7c129db71e511cd00705e0905a47db2cca97294090785470eb599a",
+    "toolchain_digest": "sha256:2ac1b8165670d91a284b6eef71e1b36731df1eb2a9049c140c6d15ddf80c2c3d",
+    "candidate_digest": "sha256:abbf789746b086d6e1d40daa905e9dc46c54886555a3ca9c97ad61a5e312fca4"
+  },
+  "after": {
+    "repository": "alexhraber/decapod-admission-acceptance-20261117-1747-06",
+    "work_branch": "agent/pi-1758-run01/feat_01m7nqgz4z48b3a6-repository-read",
+    "head_revision": "bb1563c98fa8fb8845a24d76d9c722e9e4078659",
+    "base_branch": "acceptance/1757/launch-20261117-01-base",
+    "accepted_base_revision": "4b7f3b05637120a2ac6d638c46a13288fa6d74ce",
+    "history_digest": "sha256:420bdfb9a2da7105815fa926d13dce30e74e92701244e27a9382539a0db2b307",
+    "tree_digest": "sha256:b48ea106289a44b23f308c65ae7eeb4d1a22315141c3b51cd24218536a434381",
+    "configuration_digest": "sha256:c36ac9aefedcbbd570e35adba8a54af47d752878fab1c75a35d237611cce8f37",
+    "workflow_digest": "sha256:ec705cf11c7c129db71e511cd00705e0905a47db2cca97294090785470eb599a",
+    "toolchain_digest": "sha256:2ac1b8165670d91a284b6eef71e1b36731df1eb2a9049c140c6d15ddf80c2c3d",
+    "candidate_digest": "sha256:abbf789746b086d6e1d40daa905e9dc46c54886555a3ca9c97ad61a5e312fca4"
+  },
+  "facts": {
+    "event": "pull_request",
+    "target_branch": "acceptance/1757/launch-20261117-01-base",
+    "changed_paths": [
+      ".decapod/governance.json",
+      ".decapod/managed/specs/.manifest.json",
+      ".decapod/managed/specs/INTENT.md"
+    ]
+  },
+  "results": [
+    {
+      "key": {
+        "provider": "native",
+        "workflow": ".decapod/config.toml",
+        "job": "authorization-contract",
+        "matrix": {},
+        "profile": "repo.pr-readiness.v1"
+      },
+      "definition_digest": "sha256:640102d4aa62b66a20928475fb1fe08092be09baac418498bf6a6b3da3725157",
+      "invocation_digest": "sha256:5e5a34721200260783b6c1f745b86762c3e3a6328d80a98850d666466e055aae",
+      "toolchain_digest": "sha256:0a316aadf931418f2b847e4113d732ffdae8d04d95905f5ec6668a6b84ad1a99",
+      "executor": "native",
+      "identity": {
+        "repository": "alexhraber/decapod-admission-acceptance-20261117-1747-06",
+        "work_branch": "agent/pi-1758-run01/feat_01m7nqgz4z48b3a6-repository-read",
+        "head_revision": "bb1563c98fa8fb8845a24d76d9c722e9e4078659",
+        "base_branch": "acceptance/1757/launch-20261117-01-base",
+        "accepted_base_revision": "4b7f3b05637120a2ac6d638c46a13288fa6d74ce",
+        "history_digest": "sha256:420bdfb9a2da7105815fa926d13dce30e74e92701244e27a9382539a0db2b307",
+        "tree_digest": "sha256:b48ea106289a44b23f308c65ae7eeb4d1a22315141c3b51cd24218536a434381",
+        "configuration_digest": "sha256:c36ac9aefedcbbd570e35adba8a54af47d752878fab1c75a35d237611cce8f37",
+        "workflow_digest": "sha256:ec705cf11c7c129db71e511cd00705e0905a47db2cca97294090785470eb599a",
+        "toolchain_digest": "sha256:2ac1b8165670d91a284b6eef71e1b36731df1eb2a9049c140c6d15ddf80c2c3d",
+        "candidate_digest": "sha256:abbf789746b086d6e1d40daa905e9dc46c54886555a3ca9c97ad61a5e312fca4"
+      },
+      "observation": {
+        "kind": "executed",
+        "execution_id": "native:26177:native-proof-NCECXW",
+        "conclusion": "failure",
+        "exit_code": 1,
+        "output_digest": "sha256:d87212fb2f96a5b3dd1691e214ef51fec8a68ca3c409da4203d5239100a0dee6",
+        "artifact_digest": null
+      }
+    }
+  ]
+}

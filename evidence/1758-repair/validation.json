@@ -1,0 +1,469 @@
+{
+  "agent_guidance": {
+    "entry_command": "decapod validate",
+    "execution": "Validation owns the configured build prerequisites, verification and tests through the selected provider and binds proof to the produced artifacts. Start once the source and required checkpoint are ready; no separate manual build is a prerequisite. Do not ask again before an already-authorized configured validation push or a supported, safely replayable retry to the same repository and workspace branch. Recheck the exact source and accepted target; stop on explicit cancellation, access or authorization denial, or a change that requires new authority.",
+    "human_input_when": "Stop for unresolved intent, a decision gate, missing authorization or unavailable access; request the specific human input without delegating ordinary configuration, build orchestration or repair to the human.",
+    "instruction": "Review the exact candidate evidence against human intent and delivery constraints. Success establishes only the reported readiness scope; delivery actions remain subject to existing authorization and review requirements.",
+    "next_action": "review_delivery_readiness",
+    "owner": "agent",
+    "phase": "validation"
+  },
+  "publication_ready": true,
+  "readiness": {
+    "agent_guidance": {
+      "entry_command": "decapod validate",
+      "execution": "Validation owns the configured build prerequisites, verification and tests through the selected provider and binds proof to the produced artifacts. Start once the source and required checkpoint are ready; no separate manual build is a prerequisite. Do not ask again before an already-authorized configured validation push or a supported, safely replayable retry to the same repository and workspace branch. Recheck the exact source and accepted target; stop on explicit cancellation, access or authorization denial, or a change that requires new authority.",
+      "human_input_when": "Stop for unresolved intent, a decision gate, missing authorization or unavailable access; request the specific human input without delegating ordinary configuration, build orchestration or repair to the human.",
+      "instruction": "Review the exact candidate evidence against human intent and delivery constraints. Success establishes only the reported readiness scope; delivery actions remain subject to existing authorization and review requirements.",
+      "next_action": "review_delivery_readiness",
+      "owner": "agent",
+      "phase": "validation"
+    },
+    "blockers": [],
+    "evidence_path": "/private/var/folders/h9/41kb5hv95hg9yw44654rnl9c0000gn/T/decapod-readiness-rqDk8y",
+    "laya_readiness": {
+      "accuracy_scope": "Upstream general-decision profile; readiness-domain reliability is unestablished. Functional examples and published numerical parity are not population accuracy evidence.",
+      "attempts": [],
+      "binding": {
+        "configuration_digest": "sha256:70c8022e135628ca7d6a54302d4f6e8935142226f305f04ef55dbea27f86d5d9",
+        "evidence_digest": "sha256:81f3d5dc09cbc18f92c890b3d2788f8e84f04abacb3ff8136e0419c5a02a18e7",
+        "governance_digest": "sha256:eefbde01d162eae9750a35307ad4fd44946712af00ad0ce4cefe3722bfcc6b43",
+        "material": {
+          "accepted_base_revision": "4b7f3b05637120a2ac6d638c46a13288fa6d74ce",
+          "base_branch": "acceptance/1757/launch-20261117-01-base",
+          "candidate_digest": "sha256:f098499b6ece09e5df872886eeac46bb9fc632cd8e31ba245f7544dc6136953f",
+          "configuration_digest": "sha256:c36ac9aefedcbbd570e35adba8a54af47d752878fab1c75a35d237611cce8f37",
+          "head_revision": "6b8ee9dcbab611edc492b7e4ff211b1a3b9a8eed",
+          "history_digest": "sha256:82884ecc55edc33a332364d8033b79a1d66896afad04eb8cf6167279bbcae750",
+          "repository": "alexhraber/decapod-admission-acceptance-20261117-1747-06",
+          "toolchain_digest": "sha256:2ac1b8165670d91a284b6eef71e1b36731df1eb2a9049c140c6d15ddf80c2c3d",
+          "tree_digest": "sha256:8b0cd9e1c24b3099dbc247370e3159f1b741f22da24047edd5efd52a2e71d4cb",
+          "work_branch": "agent/pi-1758-run01/feat_01m7nqgz4z48b3a6-repository-read",
+          "workflow_digest": "sha256:ec705cf11c7c129db71e511cd00705e0905a47db2cca97294090785470eb599a"
+        },
+        "proof_plan_digest": "sha256:e9e22212252533c78f7bab87e3aaba7ba0e38bfd0a553dd68d4935fc31a591a7",
+        "trajectory_run_id": ""
+      },
+      "capability": null,
+      "cpu_fallback_reason": null,
+      "decapod_version": "0.148.8",
+      "decision": "disabled",
+      "input_bytes": 0,
+      "input_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "judgment": null,
+      "manifest": null,
+      "mode": "disabled",
+      "reason": "disabled",
+      "request_id": "sha256:59f389d9b5050384739aff5bada9f0be8654d21c20928d786535ebd0fdacde3b",
+      "rubric": "decapod.validated-intent-readiness.laya.v2",
+      "runtime_sha256": null,
+      "schema": "decapod.laya-readiness.v1"
+    },
+    "proof_ready": true,
+    "ready": true,
+    "scope": "repository_local_readiness",
+    "stage_dispositions": [
+      {
+        "disposition": "real",
+        "evidence_scope": "repository_local_readiness",
+        "key": {
+          "job": "authorization-contract",
+          "matrix": {},
+          "profile": "repo.pr-readiness.v1",
+          "provider": "native",
+          "workflow": ".decapod/config.toml"
+        },
+        "policy": "repo.pr-readiness.v1",
+        "reason": "Required repository-declared local command; actual bounded execution is mandatory",
+        "stage": "authorization-contract"
+      },
+      {
+        "disposition": "real",
+        "evidence_scope": "repository_local_readiness",
+        "key": {
+          "job": "guard-contract",
+          "matrix": {},
+          "profile": "repo.pr-readiness.v1",
+          "provider": "native",
+          "workflow": ".decapod/config.toml"
+        },
+        "policy": "repo.pr-readiness.v1",
+        "reason": "Required repository-declared local command; actual bounded execution is mandatory",
+        "stage": "guard-contract"
+      },
+      {
+        "disposition": "non_applicable",
+        "evidence_scope": "no_hosted_ci_or_release_assurance",
+        "key": null,
+        "policy": "repo.pr-readiness.v1",
+        "reason": "Local contract mappings do not attest hosted workflow, platform matrix, release packaging or deployment execution",
+        "stage": "hosted-ci-and-release"
+      }
+    ]
+  },
+  "report": {
+    "advisory_count": 0,
+    "ci_prediction": {
+      "confidence": "measured",
+      "reasons": [],
+      "recommendations": [],
+      "result": "proven_current_candidate"
+    },
+    "drift_findings": [],
+    "elapsed_ms": 5845,
+    "fail_count": 0,
+    "failures": [],
+    "gate_timings": [
+      {
+        "elapsed_ms": 1622,
+        "name": "validate_project_specs_docs"
+      },
+      {
+        "elapsed_ms": 1124,
+        "name": "validate_validation_rules"
+      },
+      {
+        "elapsed_ms": 671,
+        "name": "validate_machine_contract"
+      },
+      {
+        "elapsed_ms": 352,
+        "name": "validate_markdown_primitives_roundtrip_gate"
+      },
+      {
+        "elapsed_ms": 292,
+        "name": "validate_git_workspace_context"
+      },
+      {
+        "elapsed_ms": 116,
+        "name": "validate_stale_workspaces"
+      },
+      {
+        "elapsed_ms": 113,
+        "name": "validate_obligations"
+      },
+      {
+        "elapsed_ms": 91,
+        "name": "validate_plan_governed_execution_gate"
+      },
+      {
+        "elapsed_ms": 74,
+        "name": "validate_legacy_jsonl_retired"
+      },
+      {
+        "elapsed_ms": 64,
+        "name": "validate_git_push_pr_gate"
+      },
+      {
+        "elapsed_ms": 61,
+        "name": "validate_git_protected_branch"
+      },
+      {
+        "elapsed_ms": 43,
+        "name": "validate_archive_integrity"
+      },
+      {
+        "elapsed_ms": 29,
+        "name": "validate_control_plane_contract"
+      },
+      {
+        "elapsed_ms": 28,
+        "name": "validate_repomap_determinism"
+      },
+      {
+        "elapsed_ms": 27,
+        "name": "validate_federation_gates"
+      },
+      {
+        "elapsed_ms": 26,
+        "name": "validate_gatekeeper_gate"
+      },
+      {
+        "elapsed_ms": 25,
+        "name": "validate_schema_determinism"
+      },
+      {
+        "elapsed_ms": 23,
+        "name": "validate_generated_artifact_whitelist"
+      },
+      {
+        "elapsed_ms": 19,
+        "name": "validate_lineage_hard_gate"
+      },
+      {
+        "elapsed_ms": 17,
+        "name": "validate_knowledge_integrity"
+      },
+      {
+        "elapsed_ms": 16,
+        "name": "validate_knowledge_promotions_if_present"
+      },
+      {
+        "elapsed_ms": 14,
+        "name": "validate_repo_map"
+      },
+      {
+        "elapsed_ms": 14,
+        "name": "validate_lcm_immutability"
+      },
+      {
+        "elapsed_ms": 13,
+        "name": "validate_watcher_audit"
+      },
+      {
+        "elapsed_ms": 13,
+        "name": "validate_lcm_rebuild_gate"
+      },
+      {
+        "elapsed_ms": 13,
+        "name": "validate_policy_integrity"
+      },
+      {
+        "elapsed_ms": 12,
+        "name": "validate_database_schema_versions"
+      },
+      {
+        "elapsed_ms": 12,
+        "name": "validate_override_authority"
+      },
+      {
+        "elapsed_ms": 11,
+        "name": "validate_health_cache_integrity"
+      },
+      {
+        "elapsed_ms": 11,
+        "name": "validate_validation_receipt_if_present"
+      },
+      {
+        "elapsed_ms": 10,
+        "name": "validate_context_capsule_policy_contract"
+      },
+      {
+        "elapsed_ms": 10,
+        "name": "validate_risk_map_violations"
+      },
+      {
+        "elapsed_ms": 10,
+        "name": "validate_internalization_artifacts_if_present"
+      },
+      {
+        "elapsed_ms": 10,
+        "name": "validate_eval_gate_if_required"
+      },
+      {
+        "elapsed_ms": 10,
+        "name": "validate_spec_drift"
+      },
+      {
+        "elapsed_ms": 10,
+        "name": "validate_entrypoint_invariants"
+      },
+      {
+        "elapsed_ms": 10,
+        "name": "validate_recursive_improvement_passes_if_present"
+      },
+      {
+        "elapsed_ms": 10,
+        "name": "validate_research_claims_if_present"
+      },
+      {
+        "elapsed_ms": 10,
+        "name": "validate_health_purity"
+      },
+      {
+        "elapsed_ms": 10,
+        "name": "validate_no_legacy_namespaces"
+      },
+      {
+        "elapsed_ms": 10,
+        "name": "validate_heartbeat_invocation_gate"
+      },
+      {
+        "elapsed_ms": 9,
+        "name": "validate_context_capsules_if_present"
+      },
+      {
+        "elapsed_ms": 9,
+        "name": "validate_canon_mutation"
+      },
+      {
+        "elapsed_ms": 9,
+        "name": "validate_project_config_toml"
+      },
+      {
+        "elapsed_ms": 9,
+        "name": "validate_workunit_manifests_if_present"
+      },
+      {
+        "elapsed_ms": 9,
+        "name": "validate_project_scoped_state"
+      },
+      {
+        "elapsed_ms": 9,
+        "name": "validate_risk_map"
+      },
+      {
+        "elapsed_ms": 9,
+        "name": "validate_watcher_purity"
+      },
+      {
+        "elapsed_ms": 9,
+        "name": "validate_docs_templates_bucket"
+      },
+      {
+        "elapsed_ms": 9,
+        "name": "validate_tooling_gate"
+      },
+      {
+        "elapsed_ms": 9,
+        "name": "validate_state_commit_gate"
+      },
+      {
+        "elapsed_ms": 9,
+        "name": "validate_embedded_self_contained"
+      },
+      {
+        "elapsed_ms": 9,
+        "name": "validate_root_dockerfile_seed_detection"
+      },
+      {
+        "elapsed_ms": 9,
+        "name": "validate_interface_contract_bootstrap"
+      },
+      {
+        "elapsed_ms": 9,
+        "name": "validate_coplayer_policy_tightening"
+      },
+      {
+        "elapsed_ms": 9,
+        "name": "validate_trajectory_artifacts_if_present"
+      }
+    ],
+    "note_count": 63,
+    "notes": [
+      "Agent Trajectory Artifact Gate",
+      "Archive Integrity Gate",
+      "Canon Mutation Gate",
+      "Co-Player Policy Tightening Gate",
+      "Context Capsule Gate",
+      "Context Capsule Policy Gate",
+      "Control Plane Contract Gate",
+      "Database Schema Version Gate",
+      "Embedded Self-Contained Gate",
+      "Entrypoint Commit Discipline Gate",
+      "Entrypoint Gate",
+      "Eval Gate Requirement",
+      "Federation Gates",
+      "Four Invariants Gate",
+      "Gatekeeper Safety Gate",
+      "Generated Artifact Whitelist Gate",
+      "Git Protected Branch Gate",
+      "Git Push & PR Gate",
+      "Git Workspace Context Gate",
+      "Governance PR Update Gate",
+      "Health Cache Non-Authoritative Gate",
+      "Health Purity Gate",
+      "Heartbeat Invocation Gate",
+      "Interface Contract Bootstrap Gate",
+      "Internalization Artifact Gate",
+      "Knowledge Integrity Gate",
+      "Knowledge Promotion Ledger Gate",
+      "LCM Immutability Gate",
+      "LCM Rebuild Gate",
+      "Legacy JSONL Retirement Gate",
+      "Lineage Hard Gate",
+      "Living Specs Material Mutation Gate",
+      "Machine Contract Drift Detection Gate",
+      "Managed Spec Projection Inventory Gate",
+      "Markdown Primitive Round-Trip Gate",
+      "Namespace Purge Gate",
+      "Plan-Governed Execution Gate",
+      "Policy Integrity Gates",
+      "Project Config Gate",
+      "Project Specs Architecture Gate",
+      "Project-Scoped State Gate",
+      "Publication Bundle Currency Gate",
+      "Recursive Improvement Pass Gate",
+      "Repo Map",
+      "Repo Map Determinism Gate",
+      "Repository Override Authority Gate",
+      "Research Claims Ledger Gate",
+      "Risk Map Gate",
+      "Root Dockerfile Boundary Gate",
+      "STATE_COMMIT Validation Gate",
+      "STATE_COMMIT: required_ci_job = state_commit_golden_vectors",
+      "Schema Determinism Gate",
+      "Spec Drift Detection Gate (Hygiene)",
+      "Stale Workspaces Cleanup Gate",
+      "Store: repo (dogfood backlog semantics)",
+      "Tooling Validation Gate",
+      "Validation Receipt Gate",
+      "Validation Rules Gate",
+      "Watcher Audit Gate",
+      "Watcher Purity Gate",
+      "Work Unit Manifest Gate",
+      "Zone Violation Gate",
+      "material_specs: outcome=passed proof=authored_change"
+    ],
+    "parallelism": 1,
+    "pass_count": 195,
+    "skip_count": 13,
+    "status": "ok",
+    "temporary_artifacts_cleaned": 0,
+    "validation_epoch": {
+      "constitution_hash": "sha256:27c3a78e5546640f5ef8da0460decda605aca8f82b9019482bb27a8f0b6d8a5d",
+      "constitution_version": "embedded-docs@0.148.8",
+      "epoch_id": "ve_e1f1bf4cac07ec7a",
+      "evaluator_identity": "decapod-validate@0.148.8",
+      "evaluator_set_hash": "sha256:62c37cdeb24846dfe94f5a66e28553c4a8e7d852891678bf83547e41900d7bbd",
+      "generated_specs_fingerprint": "663b46f7d815cf405a2e757e2edbef5cc0050634046946bf46e0033836bf617c",
+      "generated_specs_manifest_hash": "sha256:bb0f66ba79cad57b7f3352d163a7b5a856f90b524d5636448454534c40c3e44b",
+      "material_hashes": {
+        "constitution:core/DECAPOD": "sha256:27c3a78e5546640f5ef8da0460decda605aca8f82b9019482bb27a8f0b6d8a5d",
+        "generated_spec:.decapod/managed/specs/ARCHITECTURE.md": "sha256:e01a4ca09866830c0c499139c384c17c4e0c8c35f2618c0dcb4e84cb27f40b90",
+        "generated_spec:.decapod/managed/specs/INTENT.md": "sha256:d05c7e3e9721c6141c21182d8e38c48aa2b52e28bd2a6ba2802ef2cb96f6d931",
+        "generated_spec:.decapod/managed/specs/INTERFACES.md": "sha256:4d4429f747c9dedc9e3bf9483de0e1478e14feaa4e045b94c93c288231ed637e",
+        "generated_spec:.decapod/managed/specs/OPERATIONS.md": "sha256:bcd6411307950ec7c6bbf19bc7fd1582de37a4ce45b3a674ff39de32845c1298",
+        "generated_spec:.decapod/managed/specs/README.md": "sha256:625311c239f43355d7fd440905d88df986860bdbdb41ffbf75b3a179376cb275",
+        "generated_spec:.decapod/managed/specs/SECURITY.md": "sha256:b7b91816fd3680b10bb7f1fa784843f7d407891e0021671c3d3944c650aae5c3",
+        "generated_spec:.decapod/managed/specs/SEMANTICS.md": "sha256:6dcb16a2945ef07a232bf2a55eb4a3c803698b37c746e76ad624630360265547",
+        "generated_spec:.decapod/managed/specs/VALIDATION.md": "sha256:454778fbddffbb26d9f0875345ba9493a3ac42bd102b7d8ac78705dab180eb06",
+        "generated_specs_fingerprint": "663b46f7d815cf405a2e757e2edbef5cc0050634046946bf46e0033836bf617c",
+        "generated_specs_manifest": "sha256:bb0f66ba79cad57b7f3352d163a7b5a856f90b524d5636448454534c40c3e44b",
+        "governance_context": "sha256:36e49dc9d7e9d4a085fe9214c791a92284a024fec8b16766324f70084ec3ce71",
+        "governance_material:.decapod/managed/Dockerfile.decapod": "sha256:291ef51cd223d33cb940e2d4988f06bb28d14b60dab146b41d079458bfe19c8f",
+        "governance_material:AGENTS.md": "sha256:c18431dae65f117558b7c6ec4c52f7e9f3d0d8324ce1ad0ca9d7331fb92e2115",
+        "governance_material:CLAUDE.md": "sha256:eedd76175db239a17a82b91e8127db39deb51ab5da0c8cb7f19fe23c0d02b993",
+        "governance_material:CODEX.md": "sha256:14e9944016c884caca9a10672bb423198d7c8c24f88392baf3d2c930d877dac2",
+        "governance_material:GEMINI.md": "sha256:c47d6b1d752b5f259f0f3c9ac7deb12ff4ca13c20b89493702f80465d0f62fb0",
+        "governance_section:claims": "sha256:3b413191c0db0f6a467bb24309d2fa5cf53b196e75621cf022fc624b82965e59",
+        "governance_section:plan": "sha256:3ad885b0f114064a842c0fa573d9dc34afdbf092ae94a5b0e46180a837049de7",
+        "living_spec_material:.decapod/managed/specs/ARCHITECTURE.md": "sha256:971d9ed5f84ddb7eca1ac216168cbfd954fcefa1b4915a4cf385db2219f56349",
+        "living_spec_material:.decapod/managed/specs/INTENT.md": "sha256:5e246f467d40ed733202685e4b15132bb44b10cccc963d68defba1e7fd3ee0ea",
+        "living_spec_material:.decapod/managed/specs/INTERFACES.md": "sha256:fa6b033e1aa0dd2b0de9f8469171bd935fa7375547ebafc7695c30aecc497137",
+        "living_spec_material:.decapod/managed/specs/OPERATIONS.md": "sha256:a178e5a0d40014cbe11b8b60582ffe8e2bd723d3c797a796ab24dcb02dde1f62",
+        "living_spec_material:.decapod/managed/specs/README.md": "sha256:f66bf3e3dc0134afa2765be1df3dc51747255665d724c3f896d92b96ac81b545",
+        "living_spec_material:.decapod/managed/specs/SECURITY.md": "sha256:fadcfb12e190e89e4a18799a0f6aca5c10828436fe2d0c2b8c090224b90a9399",
+        "living_spec_material:.decapod/managed/specs/SEMANTICS.md": "sha256:8d095ba669b9335ba24e4ef13dbadd6041178f3991eef8feb0fcb6321a920431",
+        "living_spec_material:.decapod/managed/specs/VALIDATION.md": "sha256:b8737a18e39d4ea1e48e7e113e34049b847ceb38c6e518f957b77143e436de6e",
+        "proof_rubric": "sha256:99e8ef25629da391e9b479db9fff52b82f340224f7a69d8a88d2992ae8e90466",
+        "validation_profile": "sha256:37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f"
+      },
+      "proof_rubric": "decapod-validate/current-proof-v1",
+      "proof_rubric_hash": "sha256:99e8ef25629da391e9b479db9fff52b82f340224f7a69d8a88d2992ae8e90466",
+      "schema_version": "1.0.0",
+      "validation_profile": "default",
+      "validation_profile_hash": "sha256:37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f"
+    },
+    "warn_count": 4,
+    "warnings": [
+      "Risk map missing (run `decapod riskmap init`)",
+      "Stale workspaces preserved for explicit review: <external-path> (unregistered_workspace: workspace ownership is unverified; --force does not authorize deleting unrelated directories. Inspect and preserve or remove this directory explicitly), <external-path> (current_workspace: workspace contains the current process; rerun prune from the host checkout after leaving this workspace so Git can release the branch)",
+      "Watcher audit trail missing (run `decapod govern watcher run`)",
+      "Workspace branch 'agent/pi-1758-run01/feat_01m7nqgz4z48b3a6-repository-read' has unpushed commits or does not exist on origin. Branch pushes and iteration are allowed before preflight; hold PR creation until intent is converged, the branch is mergeable, and full `decapod validate` succeeds against the exact current candidate and accepted target."
+    ]
+  },
+  "scope": "publication_readiness",
+  "self_heal": [],
+  "status": "ok"
+}

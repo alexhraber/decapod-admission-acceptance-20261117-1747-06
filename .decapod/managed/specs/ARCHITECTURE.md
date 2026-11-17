@@ -128,6 +128,14 @@ Do not assume database transactions, automatic retries, or side-effect rollback.
 | Runtime saturation under peak load | Medium | High | Capacity model + load tests |
 
 
+## Implemented Repository Authorization Boundary
+
+The product is an in-process CommonJS library, not a deployed service. `src/access.cjs::canRead` makes a synchronous boolean decision over caller-supplied actor and repository records. It performs no I/O, persistence, identity lookup, or mutation. Callers own record authenticity and freshness; this predicate does not authenticate them.
+
+The short-circuit sequence is actor presence, strictly active membership, organization equality, then ownership or explicit repository-ID inclusion. Membership restrictions apply equally to owners. `Array.isArray(actor.repositoryIds)` prevents a missing or string-valued grant collection from granting access or throwing during inclusion. Repository and actor IDs are assumed to be valid identity values supplied by callers, as in the accepted contract; this change does not introduce an identity provider or schema validator.
+
+The accepted ten assertion literals in `.decapod/config.toml` execute the real source using the configured native Node runtime. The independent `guard-contract` checks `src/guard.txt`; neither check nor that guard changes. `tests/access.contract.cjs` is only the readable convenience copy. No framework, package installation, database, HTTP handler or migration is needed.
+
 ## Accepted repository access contract
 
 The application exports canRead(actor, repository) from src/access.cjs. Active
@@ -145,7 +153,7 @@ the new issue-scoped target is independent. Admission never authorizes merge.
 
 ## Codebase Attestation
 
-- Repository signal fingerprint: `4e2cacf2680f182547e1a3cee504514bba559d43ee55e96f8599980ea3113557`
+- Repository signal fingerprint: `663b46f7d815cf405a2e757e2edbef5cc0050634046946bf46e0033836bf617c`
 - Significant implementation surfaces: `README.md/` (1 files), `src/` (2 files)
 - Refreshed from the current codebase by `decapod rpc --op specs.refresh`
 <!-- decapod:codebase-attestation:end -->

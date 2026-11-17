@@ -1,25 +1,62 @@
 {
   "schema_version": "1.0.0",
   "baseline": {
-    "accepted_commit": "75530fa41693b2b6c062c366edf956b0e6d1eeb0"
+    "accepted_commit": "4b7f3b05637120a2ac6d638c46a13288fa6d74ce"
   },
   "change": {
-    "id": "change_01M7NNJMQFJREGQY86XJ7S77BA",
-    "base_commit": "75530fa41693b2b6c062c366edf956b0e6d1eeb0",
+    "id": "change_01M7NQHNNABMYRWNK2JWNKJ7XY",
+    "base_commit": "4b7f3b05637120a2ac6d638c46a13288fa6d74ce",
     "target_base": "origin/acceptance/1757/launch-20261117-01-base"
+  },
+  "claims": {
+    "repository-reads": {
+      "statement": "Active same-organization actors need repository ownership or an exact repository grant",
+      "falsifier": "Any accepted authorization assertion fails after repair",
+      "status": "supported",
+      "proof_refs": [
+        "evidence/1758-repair/validation.json"
+      ]
+    }
   },
   "checkpoints": [
     {
-      "id": "fixture-1757-accepted-projections",
-      "summary": "Prepare current native projections and accepted independent source assertions without repairing the seeded authorization defect",
-      "input_digest": "sha256:ddc95b73581b0a786d3afc645934646a6c22cd8692f97ec789d7c8b816cb2e14",
+      "id": "baseline-setup",
+      "summary": "Establish governed scope before measuring unchanged seeded access behavior",
+      "input_digest": "sha256:8ceb837d30f8bd7b914570fa2eda3c7128b9c07e4a384b453251d15394ad4830"
+    },
+    {
+      "id": "baseline-spec",
+      "summary": "Document actual product and required baseline without changing access behavior",
+      "input_digest": "sha256:990ad3537d5eed06fabe4a86a56e68774ecedb8061037af83c3c845efe0cb3f0",
       "proof_refs": [
-        "issue:1757:operator-fixture-preparation"
+        "/tmp/1758-baseline.json"
+      ]
+    },
+    {
+      "id": "baseline-spec-sections",
+      "summary": "Align authored intent headings with required spec schema; access remains unchanged",
+      "input_digest": "sha256:5bc33e75721064b4762b5959c5e2d79ed1bfa04f8f4c35279e043d579b007571"
+    },
+    {
+      "id": "authorization-repair",
+      "summary": "Require repository-specific grant or active organization ownership; retain genuine failing baseline evidence",
+      "input_digest": "sha256:f1026b585005040a3d084e8c163155506238581d70fa672b966c355e5f0ec420",
+      "proof_refs": [
+        "evidence/1758-baseline/native-0.stderr",
+        "evidence/1758-baseline/validation.json"
+      ]
+    },
+    {
+      "id": "repair-proof",
+      "summary": "Retain passing repair proof and regression trajectory; final candidate requires fresh validation",
+      "input_digest": "sha256:e638b39eccecf9afb058b890c7624f2683aebd748b2182545bb543a633a7576a",
+      "proof_refs": [
+        "evidence/1758-repair/validation.json"
       ]
     }
   ],
   "intents": {
-    "intent:change_01M7NNJMQFJREGQY86XJ7S77BA": {
+    "intent:change_01M7NQHNNABMYRWNK2JWNKJ7XY": {
       "acceptance_criteria": [],
       "assumptions": [],
       "boundaries": [
@@ -29,11 +66,11 @@
         "root"
       ],
       "created_sequence": 1,
-      "id": "intent:change_01M7NNJMQFJREGQY86XJ7S77BA",
+      "id": "intent:change_01M7NQHNNABMYRWNK2JWNKJ7XY",
       "out_of_scope": [],
       "proof_requirements": [],
-      "raw_intent": "Prepare issue 1757 isolated acceptance projections",
-      "refined_intent": "Prepare issue 1757 isolated acceptance projections",
+      "raw_intent": "Implement repository-scoped read authorization and publish verified unmerged PR",
+      "refined_intent": "Implement repository-scoped read authorization and publish verified unmerged PR",
       "status": "refined",
       "updated_sequence": 3
     }
@@ -42,92 +79,237 @@
     "plan": {
       "constraints": {
         "file_touch_budget": null,
-        "forbidden_paths": []
+        "forbidden_paths": [
+          "src/guard.txt",
+          ".decapod/config.toml",
+          "tests/access.contract.cjs"
+        ]
       },
       "deferred_questions": [],
       "human_questions": [],
-      "intent": "Prepare issue 1757 operator-seeded acceptance baseline with complete current projections and independently fixed assertions. Preserve the deliberately failing access implementation for the actual Pi experiment; do not supply its repair. All historical refs and PR 1 remain immutable.",
+      "intent": "Implement README repository-scoped reads: active same-organization membership plus ownership or explicit repository grant; retain failing baseline then fresh accepted proof and publish unmerged via Decapod",
       "phases": [],
       "proof_hooks": [
-        "decapod validate"
+        "decapod validate --format json"
       ],
       "schema_version": "1.1.0",
       "spec_reviews": [
         {
           "disposition": "updated",
           "path": ".decapod/managed/specs/ARCHITECTURE.md",
-          "reason": "Operator-reviewed accepted repository access assertions and intentionally seeded defect; actual agent must diagnose and repair after a genuine failed required check.",
-          "reviewed_code_fingerprint": "4e2cacf2680f182547e1a3cee504514bba559d43ee55e96f8599980ea3113557",
-          "spec_material_hash": "0bacc73a3aa21c07fd972e4c0a34be876bf2ce3712d57f97804d93b41aac1924"
+          "reason": "Document actual pure predicate, caller trust boundary and short-circuit authorization order",
+          "reviewed_code_fingerprint": "663b46f7d815cf405a2e757e2edbef5cc0050634046946bf46e0033836bf617c",
+          "spec_material_hash": "971d9ed5f84ddb7eca1ac216168cbfd954fcefa1b4915a4cf385db2219f56349"
         },
         {
           "disposition": "updated",
           "path": ".decapod/managed/specs/INTERFACES.md",
-          "reason": "Operator-reviewed accepted repository access assertions and intentionally seeded defect; actual agent must diagnose and repair after a genuine failed required check.",
-          "reviewed_code_fingerprint": "4e2cacf2680f182547e1a3cee504514bba559d43ee55e96f8599980ea3113557",
-          "spec_material_hash": "ccccb42214f1643dbc9e332a827ab2420ec64430d22bb1e95a8c9830425e2cf5"
+          "reason": "Document actor fields, active owner semantics and repository-specific array grants",
+          "reviewed_code_fingerprint": "663b46f7d815cf405a2e757e2edbef5cc0050634046946bf46e0033836bf617c",
+          "spec_material_hash": "fa6b033e1aa0dd2b0de9f8469171bd935fa7375547ebafc7695c30aecc497137"
         },
         {
-          "disposition": "updated",
+          "disposition": "unchanged_with_reason",
           "path": ".decapod/managed/specs/SECURITY.md",
-          "reason": "Operator-reviewed accepted repository access assertions and intentionally seeded defect; actual agent must diagnose and repair after a genuine failed required check.",
-          "reviewed_code_fingerprint": "4e2cacf2680f182547e1a3cee504514bba559d43ee55e96f8599980ea3113557",
+          "reason": "Existing accepted authorization requirement remains unchanged; implementation and interface specs now explain enforcement",
+          "reviewed_code_fingerprint": "663b46f7d815cf405a2e757e2edbef5cc0050634046946bf46e0033836bf617c",
           "spec_material_hash": "fadcfb12e190e89e4a18799a0f6aca5c10828436fe2d0c2b8c090224b90a9399"
         }
       ],
       "state": "APPROVED",
       "stop_conditions": [],
-      "title": "Prepare issue 1757 isolated acceptance projections",
+      "title": "Implement repository-scoped read authorization and publish verified unmerged PR",
       "todo_ids": [
-        "bugs_01m7nnj7zsmrrb7v"
+        "feat_01m7nqgz4z48b3a6"
       ],
       "unknowns": [],
       "unresolved_contradictions": [],
-      "updated_at": "1794949877Z"
+      "updated_at": "1794952157Z"
     },
     "trajectory": {
       "active_boundaries": [
         "Current claimed task and isolated work branch"
       ],
-      "artifact_hash": "sha256:2c174ccb4829cf7cfb33269066f80b30f15f630f1df8283abe0ed017e9c86cf8",
-      "checks": [],
-      "current_phase": "intent",
+      "artifact_hash": "sha256:073fafc9b8c423e865c4122c10c0d9ea9dfceca4ab92f7c31998c882b19bc24a",
+      "checks": [
+        {
+          "name": "independent_source_guard",
+          "status": "passed"
+        },
+        {
+          "name": "repaired_authorization",
+          "status": "passed"
+        },
+        {
+          "name": "seeded_authorization_baseline",
+          "status": "failed"
+        }
+      ],
+      "current_phase": "validation",
       "custody": {
         "events": [
           {
             "event_id": "event:2",
-            "intent_id": "intent:change_01M7NNJMQFJREGQY86XJ7S77BA",
+            "intent_id": "intent:change_01M7NQHNNABMYRWNK2JWNKJ7XY",
             "kind": "created",
             "sequence": 2
           },
           {
             "event_id": "event:3",
-            "intent_id": "intent:change_01M7NNJMQFJREGQY86XJ7S77BA",
+            "intent_id": "intent:change_01M7NQHNNABMYRWNK2JWNKJ7XY",
             "kind": "refined",
             "sequence": 3
+          },
+          {
+            "detail": "trajectory:branch_01M7NQHNQY1TWS7SNJ9DX19Z73",
+            "event_id": "event:4",
+            "intent_id": "intent:change_01M7NQHNNABMYRWNK2JWNKJ7XY",
+            "kind": "trajectory_step_recorded",
+            "sequence": 4
+          },
+          {
+            "detail": "trajectory:branch_01M7NQHNQY1TWS7SNJ9DX19Z73",
+            "event_id": "event:5",
+            "intent_id": "intent:change_01M7NQHNNABMYRWNK2JWNKJ7XY",
+            "kind": "trajectory_step_recorded",
+            "sequence": 5
+          },
+          {
+            "detail": "trajectory:branch_01M7NQHNQY1TWS7SNJ9DX19Z73",
+            "event_id": "event:6",
+            "intent_id": "intent:change_01M7NQHNNABMYRWNK2JWNKJ7XY",
+            "kind": "trajectory_step_recorded",
+            "sequence": 6
           }
         ],
         "knowledge_candidates": [],
-        "next_sequence": 3,
+        "next_sequence": 6,
         "schema_version": "1.0.0",
-        "trajectories": {}
+        "trajectories": {
+          "branch_01M7NQHNQY1TWS7SNJ9DX19Z73": {
+            "evidence_only": true,
+            "id": "branch_01M7NQHNQY1TWS7SNJ9DX19Z73",
+            "intent_id": "intent:change_01M7NQHNNABMYRWNK2JWNKJ7XY",
+            "steps": [
+              {
+                "action": "trajectory.record",
+                "custody_event_id": "event:4",
+                "observations": [
+                  "README.md",
+                  "src/access.cjs",
+                  "tests/access.contract.cjs",
+                  ".decapod/config.toml"
+                ],
+                "proof_refs": [],
+                "scope": [
+                  "root"
+                ],
+                "sequence": 4,
+                "validation_findings": []
+              },
+              {
+                "action": "loop:authorization-regression:1",
+                "custody_event_id": "event:5",
+                "observations": [],
+                "proof_refs": [
+                  "evidence/1758-baseline/validation.json",
+                  "evidence/1758-baseline/native-0.stderr"
+                ],
+                "scope": [
+                  "root"
+                ],
+                "sequence": 5,
+                "validation_findings": [
+                  "Accepted command executed on unchanged access source at bb1563c and failed missing repository grant: true !== false. Not a timeout or missing prerequisite."
+                ]
+              },
+              {
+                "action": "loop:authorization-regression:2",
+                "custody_event_id": "event:6",
+                "observations": [],
+                "proof_refs": [
+                  "evidence/1758-repair/validation.json",
+                  "evidence/1758-repair/native-0.stdout",
+                  "evidence/1758-repair/native-1.stdout"
+                ],
+                "scope": [
+                  "root"
+                ],
+                "sequence": 6,
+                "validation_findings": []
+              }
+            ]
+          }
+        }
       },
-      "declared_commands": [],
+      "declared_commands": [
+        "decapod validate --format json"
+      ],
       "destination": "pull request",
-      "evidence": [],
-      "inspected_files": [],
-      "intent_id": "intent:change_01M7NNJMQFJREGQY86XJ7S77BA",
-      "modified_files": [],
+      "evidence": [
+        "evidence/1758-baseline/native-0.stderr",
+        "evidence/1758-baseline/validation.json",
+        "evidence/1758-repair/validation.json"
+      ],
+      "inspected_files": [
+        ".decapod/config.toml",
+        "README.md",
+        "src/access.cjs",
+        "tests/access.contract.cjs"
+      ],
+      "intent_id": "intent:change_01M7NQHNNABMYRWNK2JWNKJ7XY",
+      "loops": [
+        {
+          "attempt": 1,
+          "custody_event_id": "event:5",
+          "feedback": "Accepted command executed on unchanged access source at bb1563c and failed missing repository grant: true !== false. Not a timeout or missing prerequisite.",
+          "grader_result": "fail",
+          "intent_id": "intent:change_01M7NQHNNABMYRWNK2JWNKJ7XY",
+          "loop_id": "authorization-regression",
+          "loop_type": "verification",
+          "mutation_proposal": "none",
+          "proof_refs": [
+            "evidence/1758-baseline/native-0.stderr",
+            "evidence/1758-baseline/validation.json"
+          ],
+          "status": "retrying",
+          "trajectory_id": "branch_01M7NQHNQY1TWS7SNJ9DX19Z73",
+          "trigger": "agent"
+        },
+        {
+          "attempt": 2,
+          "custody_event_id": "event:6",
+          "grader_result": "pass",
+          "intent_id": "intent:change_01M7NQHNNABMYRWNK2JWNKJ7XY",
+          "loop_id": "authorization-regression",
+          "loop_type": "verification",
+          "mutation_proposal": "none",
+          "proof_refs": [
+            "evidence/1758-repair/native-0.stdout",
+            "evidence/1758-repair/native-1.stdout",
+            "evidence/1758-repair/validation.json"
+          ],
+          "status": "passed",
+          "trajectory_id": "branch_01M7NQHNQY1TWS7SNJ9DX19Z73",
+          "trigger": "agent"
+        }
+      ],
+      "modified_files": [
+        ".decapod/managed/specs/ARCHITECTURE.md",
+        ".decapod/managed/specs/INTENT.md",
+        ".decapod/managed/specs/INTERFACES.md",
+        "src/access.cjs"
+      ],
       "next_transitions": [
         "Refine plan and declare falsifiable checks"
       ],
       "repo_scope": [
         "root"
       ],
-      "run_id": "branch_01M7NNJMSKWRJGYAPMAYSDBE4B",
+      "run_id": "branch_01M7NQHNQY1TWS7SNJ9DX19Z73",
       "schema_version": "1.1.0",
       "shortcut_risk_signals": [],
-      "task_id": "bugs_01m7nnj7zsmrrb7v",
+      "task_id": "feat_01m7nqgz4z48b3a6",
       "tool_calls": [],
       "unresolved_assumptions": []
     }

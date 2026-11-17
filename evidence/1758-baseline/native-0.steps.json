@@ -1,0 +1,11 @@
+[
+  {
+    "index": 0,
+    "duration_ms": 168,
+    "termination": "Exited",
+    "exit_code": 1,
+    "stdout_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_digest": "sha256:e44c357022605f74270bc8694c8c8691de9b6dda98b21a67ebe7b20b700d46ad",
+    "error": null
+  }
+]

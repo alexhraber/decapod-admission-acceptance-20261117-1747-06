@@ -1,154 +1,32 @@
 # Intent
 
 ## Project Purpose
-An isolated repository access module with accepted independent source checks and exact-evidence GitHub publication
-
-## Authoring Scope and Evidence
-Project: Repository authorization acceptance. This is an initial authoring scaffold, not an implementation attestation.
-
-Describe the configured project from purpose to architecture to implementation depth. Start with the whole product: its users, problem, outcomes, and boundaries; then explain the system and its components, interfaces, state, operations, security, and proof. Ground factual prose in the repository's config, README/product documentation, source paths and symbols, contracts, and tests. Distinguish implemented behavior, intended behavior, assumptions, and unresolved gaps. A narrow task changes the relevant part of this whole-project account; it must not replace project-wide identity with the latest task, release workflow, or tooling. Record task-specific scope and evidence in the current change's governance record. Templates and declared capabilities are authoring/proof obligations, not evidence that a runtime guarantee exists. Preserve authored prose during generated refreshes. If configured metadata and explicit project-level sections are absent, leave project identity unknown and ask for or author grounded context rather than promoting an arbitrary legacy/task line.
-
-Use the seeded context below as a starting point to verify against repository sources. Replace example diagrams, suggested controls, targets, tables, and blank fields with source-grounded prose; mark non-applicable topics with a reason. Do not adopt a store, queue, server, CI provider, replay guarantee, or service level merely because it appears in a template.
+Repository authorization acceptance is a small JavaScript library for callers deciding whether an actor may read a repository. README.md defines the security outcome; `src/access.cjs` exports `canRead(actor, repository)`.
 
 ## Product Outcome
-- An isolated repository access module with accepted independent source checks and exact-evidence GitHub publication
+Provide a synchronous repository-scoped authorization decision without external dependencies.
 
-## What This Project Is
-Repository authorization acceptance is a service_or_library project built using JavaScript.
-An isolated repository access module with accepted independent source checks and exact-evidence GitHub publication
-
-Key operating facts:
-- **Primary languages**: JavaScript
-- **Detected surfaces**: not detected yet
-
-## Product View
-```mermaid
-flowchart LR
-  U[Primary User] --> P[Repository authorization acceptance]
-  P --> O[User-visible Outcome]
-  P --> G[Proof Gates]
-  G --> E[Evidence Artifacts]
-```
-
-## Inferred Baseline
-- Repository: Repository authorization acceptance
-- Product type: service_or_library
-- Primary languages: JavaScript
-- Detected surfaces: not detected yet
+## Acceptance Criteria
+- REQ-READ: Only active members of the repository's organization may read. Within that organization, ownership or an explicit grant for this exact repository is required.
+- REQ-DENY: Anonymous, revoked, foreign-organization and ungranted actors must be denied. A grant for another repository is insufficient. Ownership does not bypass active membership.
+- REQ-PROOF: Preserve a genuine failing baseline through structured Decapod validation before repairing access behavior, then obtain fresh full proof for the exact publication candidate.
+- REQ-GUARD: Preserve `src/guard.txt` and its independent accepted proof command.
 
 ## Scope
-| Area | In Scope | Proof Surface |
-|---|---|---|
-| Core workflow | Define a concrete user-visible workflow | Acceptance criteria + tests |
-| Data contracts | Document canonical inputs/outputs | [INTERFACES.md](./INTERFACES.md) and schema checks |
-| Delivery quality | Block promotion on broken proof surfaces | [VALIDATION.md](./VALIDATION.md) blocking gates |
+The original seeded `src/access.cjs` checked only active organization membership. Decapod validation of baseline commit `bb1563c` executed the accepted authorization command and failed at `missing repository grant` (actual true, expected false). Retained structured evidence is under `evidence/1758-baseline/`.
 
-## Non-Goals (Falsifiable)
-| Non-goal | How to falsify |
-|---|---|
-| Feature creep beyond the primary outcome | Any PR adds capability not tied to outcome criteria |
-| Shipping without evidence | Missing validation artifacts for promoted changes |
-| Ambiguous ownership boundaries | Missing owner/system-of-record in interfaces |
+The repaired predicate additionally requires ownership or an array containing the exact repository ID. Missing grant arrays deny non-owners without throwing. Active membership and organization equality are checked before either authorization route. Fresh exact-candidate validation remains necessary; the baseline failure alone does not prove repair. The accepted proof configuration and convenience test remain unchanged.
+
+The proof authority is the ten literal assertions in `.decapod/config.toml`, plus the independent source guard. `tests/access.contract.cjs` is a readable copy, not replacement authority. No server, database, cloud service, dependency installation, deployment or performance target is part of this product.
 
 ## Constraints
-- Technical: runtime, dependency, and topology boundaries are explicit.
-- Operational: deployment, rollback, and incident ownership are defined.
-- Security/compliance: sensitive data handling and authz are mandatory.
-
-## Acceptance Criteria (must be objectively testable)
-- [ ] Required repository access assertions, governed task/workspace, fresh proof and exact GitHub PR admission; no merge authorization
-- [ ] Non-functional targets are met (latency, reliability, cost, etc.).
-- [ ] Validation gates pass and artifacts are attached.
-- [ ] `npm test` (or `pnpm test`) passes for unit/integration suites
-- [ ] `npm run lint` passes
-- [ ] `npm run typecheck` passes for strict TS projects
-
-## Epistemic Custody Fields
-
-### Active Assumptions
-- [ ] List any assumptions made to proceed.
-- [ ] Flag assumptions that require future verification.
-
-### Confidence & Risk Level
-- **Confidence**: Low/Medium/High (Rationale: )
-- **Risk**: Low/Medium/High (Impact of wrong assumptions: )
-
-### Measured vs Inferred Facts
-| Fact | Source (Provenance) | Type (Measured/Inferred) |
-|---|---|---|
-| | | |
-
-### Unresolved Contradictions
-- [ ] List any evidence that conflicts with current assumptions or intent.
-
-### Deferred Questions
-- [ ] Questions to be answered later.
-
-### Stop Conditions
-- [ ] Explicit conditions under which the agent should stop and ask for help.
-
-### Proof Required Before Completion
-- [ ] Specific evidence needed to prove the outcome is met.
-
-## Tradeoffs Register
-| Decision | Benefit | Cost | Review Trigger |
-|---|---|---|---|
-| Simplicity vs extensibility | Faster iteration | Potential rework | Feature set expands |
-| Strict gates vs dev speed | Higher confidence | More upfront discipline | Lead time regressions |
-
-## First Implementation Slice
-- [ ] Define the smallest user-visible workflow to ship first.
-- [ ] Define required data/contracts for that workflow.
-- [ ] Define what is intentionally postponed until v2.
-
-## User and Actor Contract
-- Primary user/agent:
-- Authorized actors and their allowed mutations:
-- Preconditions required before the primary workflow:
-- Observable success result:
-- Observable failure result and recovery action:
-- Human decision points that automation must not infer:
-
-## Outcome Decomposition
-| Outcome | Trigger | State Written | Evidence | Owner |
-|---|---|---|---|---|
-| Primary outcome | | | | |
-| Safety/quality outcome | | | | |
-| Operational outcome | | | | |
-
-## Change Impact Rules
-- A change to user intent updates this document and acceptance criteria.
-- A change to a runtime boundary updates [ARCHITECTURE.md](./ARCHITECTURE.md).
-- A change to a callable or persisted contract updates [INTERFACES.md](./INTERFACES.md).
-- A change to proof or promotion behavior updates [VALIDATION.md](./VALIDATION.md).
-- A breaking change requires an explicit migration trigger, compatibility note,
-  rollback condition, and an agent-facing instruction.
-
-## Open Questions (with decision deadlines)
-| Question | Owner | Deadline | Decision |
-|---|---|---|---|
-| Which interfaces are versioned at launch? | TBD | YYYY-MM-DD | |
-| Which non-functional target is hardest to hit? | TBD | YYYY-MM-DD | |
-
-
-## Accepted repository access contract
-
-The application exports canRead(actor, repository) from src/access.cjs. Active
-organization membership alone is insufficient: explicit repository grant or
-active ownership is required, and revoked/foreign/anonymous actors are denied.
-The native proof command contains ten independently accepted assertion literals
-plus a separate source guard. Agent-authored tests cannot replace these accepted
-commands. Preserve a genuine baseline validation failure, then agent-initiated
-diagnosis/repair and fresh full evidence before exact-head/base GitHub admission.
-The operator seeds the initial defect; no operator supplies the repair. Fixture
-actions belong to Decapod #1757/#1758. Historical refs and PR #1 are immutable;
-the new issue-scoped target is independent. Admission never authorizes merge.
+Work is owned by DecapodLabs/decapod #1758, following setup #1757. Publication uses Decapod, targets the configured isolated acceptance branch, and remains unmerged. Historical main, acceptance-evidence and PR #1 are outside scope. A failed prerequisite is not the required authorization regression evidence; validation must actually execute the accepted assertions. No merge authorization is implied.
 
 <!-- decapod:codebase-attestation:start -->
 
 ## Codebase Attestation
 
-- Repository signal fingerprint: `4e2cacf2680f182547e1a3cee504514bba559d43ee55e96f8599980ea3113557`
+- Repository signal fingerprint: `663b46f7d815cf405a2e757e2edbef5cc0050634046946bf46e0033836bf617c`
 - Significant implementation surfaces: `README.md/` (1 files), `src/` (2 files)
 - Refreshed from the current codebase by `decapod rpc --op specs.refresh`
 <!-- decapod:codebase-attestation:end -->
