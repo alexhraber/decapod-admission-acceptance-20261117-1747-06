@@ -13,6 +13,11 @@
       "id": "controls-initial-candidate",
       "summary": "Issue1758 controlled post-run publication and staleness test; does not alter or narrate autonomous Pi execution",
       "input_digest": "sha256:9b9c3a927bfafb9ba125a8e3a09db0d7d3dda8b371f8fcf43fbb8775e91f0f50"
+    },
+    {
+      "id": "controls-recover-quarantined-candidate",
+      "summary": "Issue1758 controlled post-run publication and staleness test; does not alter or narrate autonomous Pi execution",
+      "input_digest": "sha256:9b9c3a927bfafb9ba125a8e3a09db0d7d3dda8b371f8fcf43fbb8775e91f0f50"
     }
   ],
   "intents": {
