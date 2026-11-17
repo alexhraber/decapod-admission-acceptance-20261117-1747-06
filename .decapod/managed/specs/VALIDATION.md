@@ -158,3 +158,12 @@ diagnosis/repair and fresh full evidence before exact-head/base GitHub admission
 The operator seeds the initial defect; no operator supplies the repair. Fixture
 actions belong to Decapod #1757/#1758. Historical refs and PR #1 are immutable;
 the new issue-scoped target is independent. Admission never authorizes merge.
+
+<!-- decapod:codebase-attestation:start -->
+
+## Codebase Attestation
+
+- Repository signal fingerprint: `4e2cacf2680f182547e1a3cee504514bba559d43ee55e96f8599980ea3113557`
+- Significant implementation surfaces: `README.md/` (1 files), `src/` (2 files)
+- Refreshed from the current codebase by `decapod rpc --op specs.refresh`
+<!-- decapod:codebase-attestation:end -->
