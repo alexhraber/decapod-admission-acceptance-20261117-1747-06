@@ -1,0 +1,20 @@
+{
+  "admitted": false,
+  "material": {
+    "accepted_base_revision": "4b7f3b05637120a2ac6d638c46a13288fa6d74ce",
+    "base_branch": "acceptance/1757/launch-20261117-01-base",
+    "candidate_digest": "sha256:7d218efad5e9b2ab3f50615713d1a81f2d2029156de5aa992cacecccc40dd63c",
+    "configuration_digest": "sha256:c36ac9aefedcbbd570e35adba8a54af47d752878fab1c75a35d237611cce8f37",
+    "head_revision": "867bdf642f98459134c0ec2cfff73b79cfb741dd",
+    "history_digest": "sha256:55adfb751271932f3bdbfc8b1ac7828bb82689639df32f1741932ae845940ebc",
+    "repository": "alexhraber/decapod-admission-acceptance-20261117-1747-06",
+    "toolchain_digest": "sha256:2ac1b8165670d91a284b6eef71e1b36731df1eb2a9049c140c6d15ddf80c2c3d",
+    "tree_digest": "sha256:148877dc6577c66fe3b5dfcfed36725293fbe62e543079214cea6f1f8af20629",
+    "work_branch": "agent/operator-1758-controls/code_01m7nrm4mncp7d1z-quarantine",
+    "workflow_digest": "sha256:ec705cf11c7c129db71e511cd00705e0905a47db2cca97294090785470eb599a"
+  },
+  "merge_authorized": false,
+  "proof_plan_digest": "sha256:fa3c89373c30861fd46e24495e7a1fb0e94e1c42ddcc71eb45d74dd20a13140d",
+  "reason": "Validation error: PR_CREATED_NOT_ADMITTED: https://github.com/alexhraber/decapod-admission-acceptance-20261117-1747-06/pull/3 exists or was observed, but admission failed; quarantine=draft_confirmed. Validation error: VALIDATION_HISTORY: WORKUNIT_PROOF_STALE: source, candidate, accepted target, policy, history or measured tool identity changed; obtain fresh full validation",
+  "schema": "decapod.publication-rejection.v1"
+}

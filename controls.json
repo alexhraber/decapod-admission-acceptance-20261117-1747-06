@@ -1,0 +1,48 @@
+{
+  "schema": "decapod.post-run-controls.v1",
+  "owner_issue": "https://github.com/DecapodLabs/decapod/issues/1758",
+  "scope": "Controller-owned real-forge controls after autonomous Pi process; never attributed to the agent",
+  "post_creation": {
+    "exit_code": 1,
+    "reason_codes": [
+      "PR_CREATED_NOT_ADMITTED",
+      "WORKUNIT_PROOF_STALE"
+    ],
+    "evidence_sha256": "sha256:74ade81c6262d2ad5b369a0434a07e60017549475ff1e00c256a6f0a51a67f56",
+    "ledger_sequence": 102,
+    "pr_url": "https://github.com/alexhraber/decapod-admission-acceptance-20261117-1747-06/pull/3",
+    "quarantine": "draft_confirmed"
+  },
+  "source_mutation": {
+    "exit_code": 1,
+    "reason_codes": [
+      "GOVERNANCE_CHECKPOINT_MISSING"
+    ],
+    "evidence_sha256": "sha256:52bc026a655bd35ab876d9ebb3584d8d74f7d66ce188f05078a85688ace46158",
+    "ledger_sequence": 114
+  },
+  "target_advancement": {
+    "exit_code": 1,
+    "reason_codes": [
+      "PUBLICATION_NOT_READY",
+      "READINESS_BLOCKED",
+      "STALE_ACCEPTED_BASE"
+    ],
+    "evidence_sha256": "sha256:07d0ea571ae29965f499275ecdbb875923d0e1aebc5f494d590e828d07b25b92",
+    "ledger_sequence": 126
+  },
+  "repeated_changed_base": {
+    "exit_code": 1,
+    "reason_codes": [
+      "READINESS_BLOCKED",
+      "STALE_ACCEPTED_BASE"
+    ],
+    "evidence_sha256": "sha256:5a1cad23c60fc2b905dd9321e25ee512bee2081859bc5d112ef50fe656ba8f5f",
+    "ledger_sequence": 127
+  },
+  "primary_agent_head": "f3a7a160946b42fed7eefa3898362f0dbb122fd0",
+  "primary_accepted_base": "4b7f3b05637120a2ac6d638c46a13288fa6d74ce",
+  "advanced_base": "ada3eb89c3707801a5b86265dccc899fdabe5e1c",
+  "primary_current_admission_applicable": false,
+  "merge_authorized": false
+}

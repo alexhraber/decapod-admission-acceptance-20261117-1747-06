@@ -1,0 +1,28 @@
+[
+  {
+    "base": "4b7f3b05637120a2ac6d638c46a13288fa6d74ce",
+    "base_branch": "acceptance/1757/launch-20261117-01-base",
+    "branch": "agent/pi-1758-run01/feat_01m7nqgz4z48b3a6-repository-read",
+    "head": "f3a7a160946b42fed7eefa3898362f0dbb122fd0",
+    "merged": false,
+    "private_source": {
+      "scope": "independent gh PR readback plus live target ref",
+      "sha256": "sha256:4649f898156901d5b88356358d3beac5daec370d783ccd8cbd97c873edd18e8e"
+    },
+    "state": "OPEN",
+    "url": "https://github.com/alexhraber/decapod-admission-acceptance-20261117-1747-06/pull/2"
+  },
+  {
+    "base": "ada3eb89c3707801a5b86265dccc899fdabe5e1c",
+    "base_branch": "acceptance/1757/launch-20261117-01-base",
+    "branch": "agent/pi-1758-run01/feat_01m7nqgz4z48b3a6-repository-read",
+    "head": "f3a7a160946b42fed7eefa3898362f0dbb122fd0",
+    "merged": false,
+    "private_source": {
+      "scope": "post-run actual target ref and independently read primary PR; no new admission",
+      "sha256": "sha256:df044c3db8edc1fafe0f07dfa7e52c3f802c88ee0f6acf19bf05eb7ae766ad53"
+    },
+    "state": "OPEN",
+    "url": "https://github.com/alexhraber/decapod-admission-acceptance-20261117-1747-06/pull/2"
+  }
+]

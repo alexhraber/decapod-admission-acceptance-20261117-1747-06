@@ -1,0 +1,54 @@
+{
+  "schema": "decapod.real-agent-runtime.v1",
+  "owner_issue": "https://github.com/DecapodLabs/decapod/issues/1758",
+  "objective": "Implement the repository-scoped read authorization described in README.md and publish a verified pull request.",
+  "objective_revision": 1,
+  "harness_version": "0.73.1",
+  "pi_package_integrity": "sha512-gXQh3SaZmWTfVMc4Ao5+LGbVeKvzyO7tolok0nLsZgq9nGjZx/EEU3NM8C+qUnB4Nvs2rswG5qOVgLzQkq0fHQ==",
+  "provider": "openai-codex",
+  "model_alias": "gpt-6.1-sol",
+  "thinking": "medium",
+  "kernel_version": "0.148.8",
+  "kernel_binary_sha256": "sha256:35b01d60367b8df72ce7097e43c676bd59165540a9b031a29d4308266e13a274",
+  "release_source_reference": "18cbb30ca4d16a80810d8f3c0cecfc4073a83cbc",
+  "reproducible_binary_build_attested": false,
+  "node_version": "26.11.1",
+  "git_version": "2.54.0",
+  "python_version": "3.9.6",
+  "limits": {
+    "observed_total_tokens": 2000000,
+    "observed_uncached_tokens": 200000,
+    "token_threshold_granularity": "completed provider response; any overshoot is recorded",
+    "tool_calls": 120,
+    "wall_seconds": 3600
+  },
+  "result": {
+    "exit_code": 0,
+    "stop_reason": null,
+    "elapsed_seconds": 458.276,
+    "tool_calls": 42,
+    "assistant_messages": 32,
+    "observed_tokens": 1588942,
+    "observed_uncached_tokens": 73678
+  },
+  "human_interventions_after_objective": 0,
+  "executed_adapter_sha256": {
+    "capture.ts": "sha256:679c9bc8f490a9cb4db3fb56fab9b63ccba19eef6c5316338560d2a89fac9f3b",
+    "capture_support.py": "sha256:8becbe1bc8f32e431895c8d450cba0a4dd461137a0e201ef1ea4e1fa6d30f49e",
+    "decapod-carrier.py": "sha256:be72bcef0226d85f720c6a2d41439e385662e18ce5f37c868844548f59c49c7e",
+    "run_pi.py": "sha256:815958f64b67509e07bc19adc226af77c1d7e94167ee5fc295de1d480cce96c9"
+  },
+  "portable_adapter_sha256": {
+    "export_capture.py": "sha256:310018cd49f3f66b1563fa3159e797fa2f51874009835f164049c5c4b9afcaed",
+    "capture.ts": "sha256:d9cc46175309c76d070d9107866ea13afc45fb9499fe55d3d7b194e1c4981328",
+    "README.md": "sha256:04b5575fe15a83e2cbab858217510201a8a84b70572dea7f106eed49b2fb1b2a",
+    "run_pi.py": "sha256:5bca00947fc3fdfef6c1606876614073e09d6c58e4fa91bef4fd9319edd9b1ac",
+    "capture_support.py": "sha256:b6977900cec10b5aa78c2553d012e52eadd6981864f9a895240cdf71e120c5e1",
+    "decapod-carrier.py": "sha256:69441d10ba717925c3b42d330974c64f4570517ee9fb48714c7dbab8119ccd3d"
+  },
+  "assurance": "Trusted-host bounded observation, not arbitrary host interception or producer authentication. Portable derivatives differ from original executed adapters only as documented.",
+  "portable_export_verification": "All five portable projected witness files reproduce the actual-run export byte-for-byte, without inference or fixture mutation.",
+  "observer_source": "ebf206dbdc173509e08ef5789a5d8cb74165e016",
+  "observer_binary_sha256": "sha256:a9a002213f5e5934d1ae131348186879ae78e1f774524fdfc6ce933f9898eab5",
+  "observer_export_scope": "Read-only actual capture export; complete Decapod implementation CI is recorded separately and not implied by the export."
+}
