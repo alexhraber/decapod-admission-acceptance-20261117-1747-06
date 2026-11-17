@@ -13,7 +13,9 @@ Provide a synchronous repository-scoped authorization decision without external 
 - REQ-GUARD: Preserve `src/guard.txt` and its independent accepted proof command.
 
 ## Scope
-The seeded `src/access.cjs` currently checks only active organization membership. It does not enforce REQ-READ. The planned repair is confined to that predicate and authored living specifications; the accepted proof configuration and convenience test remain unchanged.
+The original seeded `src/access.cjs` checked only active organization membership. Decapod validation of baseline commit `bb1563c` executed the accepted authorization command and failed at `missing repository grant` (actual true, expected false). Retained structured evidence is under `evidence/1758-baseline/`.
+
+The repaired predicate additionally requires ownership or an array containing the exact repository ID. Missing grant arrays deny non-owners without throwing. Active membership and organization equality are checked before either authorization route. Fresh exact-candidate validation remains necessary; the baseline failure alone does not prove repair. The accepted proof configuration and convenience test remain unchanged.
 
 The proof authority is the ten literal assertions in `.decapod/config.toml`, plus the independent source guard. `tests/access.contract.cjs` is a readable copy, not replacement authority. No server, database, cloud service, dependency installation, deployment or performance target is part of this product.
 
@@ -24,7 +26,7 @@ Work is owned by DecapodLabs/decapod #1758, following setup #1757. Publication u
 
 ## Codebase Attestation
 
-- Repository signal fingerprint: `4e2cacf2680f182547e1a3cee504514bba559d43ee55e96f8599980ea3113557`
+- Repository signal fingerprint: `663b46f7d815cf405a2e757e2edbef5cc0050634046946bf46e0033836bf617c`
 - Significant implementation surfaces: `README.md/` (1 files), `src/` (2 files)
 - Refreshed from the current codebase by `decapod rpc --op specs.refresh`
 <!-- decapod:codebase-attestation:end -->
