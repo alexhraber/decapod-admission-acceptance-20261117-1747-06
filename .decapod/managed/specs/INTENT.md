@@ -133,6 +133,24 @@ flowchart LR
 
 ## Accepted repository access contract
 
+### Repository read outcome (REQ-REPOSITORY-READ)
+Callers use this library to decide whether an actor can read one repository.
+The target rule is conjunctive: active membership (`active === true`) in the
+repository's organization is mandatory, followed by either an explicit grant
+in `repositoryIds` for that exact `repository.id` or matching `ownerId`.
+Ownership must not bypass revocation or organization isolation. Missing grants
+must deny nonowners. No storage, network service, or membership lookup is added;
+callers supply authoritative actor and repository records.
+
+The seeded `src/access.cjs` granted access based on active organization
+membership alone. Retained baseline proof failed `missing repository grant`
+with actual true and expected false. The repaired implementation now requires
+the grant-or-owner condition inside the active organization boundary; fresh
+Decapod validation remains mandatory before declaring the change verified.
+Baseline validation must actually reach the accepted authorization command and
+retain its failing assertion, not merely fail a governance prerequisite. The
+independent `src/guard.txt` and accepted proof configuration remain unchanged.
+
 The application exports canRead(actor, repository) from src/access.cjs. Active
 organization membership alone is insufficient: explicit repository grant or
 active ownership is required, and revoked/foreign/anonymous actors are denied.
@@ -148,7 +166,7 @@ the new issue-scoped target is independent. Admission never authorizes merge.
 
 ## Codebase Attestation
 
-- Repository signal fingerprint: `4e2cacf2680f182547e1a3cee504514bba559d43ee55e96f8599980ea3113557`
+- Repository signal fingerprint: `2fe66f34809a3076c48a682476ae2b859d57ae142d7999bd39a5fafd22588b25`
 - Significant implementation surfaces: `README.md/` (1 files), `src/` (2 files)
 - Refreshed from the current codebase by `decapod rpc --op specs.refresh`
 <!-- decapod:codebase-attestation:end -->

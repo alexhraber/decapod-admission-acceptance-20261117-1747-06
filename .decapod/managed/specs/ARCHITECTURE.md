@@ -14,10 +14,21 @@ Use the seeded context below as a starting point to verify against repository so
 cli
 
 ## System Overview
-Explain how Repository authorization acceptance's main components fulfill the project purpose above.
-Start at the whole-system boundary, then trace the primary workflows down to
-implementation paths and symbols. Explain why the boundaries exist and which
-tradeoffs or limitations they create. Link to evidence for each factual claim.
+Repository authorization acceptance is a dependency-free CommonJS authorization
+library for callers making repository read decisions. `src/access.cjs::canRead`
+consumes caller-provided actor and repository records and returns a Boolean;
+it performs no I/O, persistence, or authentication. Callers own record integrity.
+
+The implementation first requires a non-null actor/repository, strictly active
+membership, and matching organization. Only within that boundary may matching
+ownership or an array containing the exact repository ID authorize the read.
+This ordering keeps revoked owners and cross-organization grants denied.
+Missing/non-array grant lists cannot authorize a nonowner. Identifiers are
+assumed to be well-formed authoritative values supplied by the caller.
+
+`src/guard.txt` remains an independent immutable source guard. The accepted
+Decapod proof commands separately check authorization and guard integrity;
+the readable `tests/access.contract.cjs` is not publication authority.
 
 ## Current Facts
 - Runtime/languages: JavaScript
@@ -145,7 +156,7 @@ the new issue-scoped target is independent. Admission never authorizes merge.
 
 ## Codebase Attestation
 
-- Repository signal fingerprint: `4e2cacf2680f182547e1a3cee504514bba559d43ee55e96f8599980ea3113557`
+- Repository signal fingerprint: `2fe66f34809a3076c48a682476ae2b859d57ae142d7999bd39a5fafd22588b25`
 - Significant implementation surfaces: `README.md/` (1 files), `src/` (2 files)
 - Refreshed from the current codebase by `decapod rpc --op specs.refresh`
 <!-- decapod:codebase-attestation:end -->
