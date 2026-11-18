@@ -28,6 +28,11 @@
       "proof_refs": [
         "evidence/1758/baseline/validation.json"
       ]
+    },
+    {
+      "id": "interface-review",
+      "summary": "Record current-code-bound interface spec review required by validation",
+      "input_digest": "sha256:5a57cdf422e52714dcfd8b9f82806f3704bbd757a6ec1947101705408e179177"
     }
   ],
   "intents": {
@@ -67,6 +72,15 @@
         "decapod validate --format json"
       ],
       "schema_version": "1.1.0",
+      "spec_reviews": [
+        {
+          "disposition": "updated",
+          "path": ".decapod/managed/specs/INTERFACES.md",
+          "reason": "Compared implemented CommonJS contract to canRead: strict active and organization checks precede owner-or-array-grant alternatives; boolean result, no I/O, valid repository identity assumption explicitly documented.",
+          "reviewed_code_fingerprint": "e22c2de1cb0f556fed76b9406212387fedec6f3e6e561a22a9b058e7e8b33315",
+          "spec_material_hash": "c64357159ecf79010602a323f1c2a786717cee12cd226d5f62ccd517a51c8aa9"
+        }
+      ],
       "state": "APPROVED",
       "stop_conditions": [],
       "title": "Implement README repository-scoped read authorization and publish verified PR (#1758)",
@@ -75,7 +89,7 @@
       ],
       "unknowns": [],
       "unresolved_contradictions": [],
-      "updated_at": "1795005430Z"
+      "updated_at": "1795005566Z"
     },
     "trajectory": {
       "active_boundaries": [
