@@ -38,6 +38,11 @@
       "id": "interface-review",
       "summary": "Record source-bound interface review required by validation",
       "input_digest": "sha256:87faac0aa69d2af1035550842d6f67acd6b850638e95d284b7fde664a2c8221e"
+    },
+    {
+      "id": "architecture-intent-review",
+      "summary": "Record source-grounded architecture and intent reviews",
+      "input_digest": "sha256:3c89e01c9fb34de88cecc71faf5d311f510a784ab2e729e6b90d46ae15107edd"
     }
   ],
   "intents": {
@@ -80,6 +85,13 @@
       "spec_reviews": [
         {
           "disposition": "updated",
+          "path": ".decapod/managed/specs/ARCHITECTURE.md",
+          "reason": "Reviewed src/access.cjs: pure CommonJS predicate, caller-owned records, no dependencies or I/O; membership gate encloses ownership and exact grant check; guard unchanged.",
+          "reviewed_code_fingerprint": "2fe66f34809a3076c48a682476ae2b859d57ae142d7999bd39a5fafd22588b25",
+          "spec_material_hash": "3f7d2aaa5dc8853580c70f8283f3d031ee3ee81f55e0b9ac2a3e9b2ecee69f08"
+        },
+        {
+          "disposition": "updated",
           "path": ".decapod/managed/specs/INTERFACES.md",
           "reason": "Reviewed canRead: synchronous Boolean with strict active and organization gates before exact owner or array grant; caller owns record validity; ten accepted actor cases and no I/O.",
           "reviewed_code_fingerprint": "2fe66f34809a3076c48a682476ae2b859d57ae142d7999bd39a5fafd22588b25",
@@ -94,7 +106,7 @@
       ],
       "unknowns": [],
       "unresolved_contradictions": [],
-      "updated_at": "1795005120Z"
+      "updated_at": "1795005143Z"
     },
     "trajectory": {
       "active_boundaries": [
