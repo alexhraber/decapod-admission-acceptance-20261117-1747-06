@@ -38,6 +38,11 @@
       "id": "spec-review",
       "summary": "Record content-bound review of authorization specs against implementation",
       "input_digest": "sha256:818064fb766a2c99937d0622843177601c1b373d71dc64e967c50c9a06528356"
+    },
+    {
+      "id": "security-review",
+      "summary": "Review accepted security contract against scoped authorization",
+      "input_digest": "sha256:6770c924db8a1502b090884dd72cc3e4242f381a79c424daea23145d4b4d3998"
     }
   ],
   "intents": {
@@ -91,6 +96,13 @@
           "reason": "Compared canRead implementation with documented strict active membership, organization match, owner alternative and array grant inclusion; synchronous boolean interface unchanged",
           "reviewed_code_fingerprint": "74b22afcbf0532a3e9a965b9fff4982f35339d55c4d0d3dac83a5889ee734959",
           "spec_material_hash": "59e7aad227cac8d5545bfc4c4d0780fe72ec8e37dce8f24c598f3a49ded08e97"
+        },
+        {
+          "disposition": "unchanged_with_reason",
+          "path": ".decapod/managed/specs/SECURITY.md",
+          "reason": "Accepted repository access contract matches canRead: strict active and same organization prerequisites precede ownership or exact array grant. Baseline missing-grant failure retained; no secret, dependency or guard changes. Scaffold controls are not implementation attestations.",
+          "reviewed_code_fingerprint": "74b22afcbf0532a3e9a965b9fff4982f35339d55c4d0d3dac83a5889ee734959",
+          "spec_material_hash": "fadcfb12e190e89e4a18799a0f6aca5c10828436fe2d0c2b8c090224b90a9399"
         }
       ],
       "state": "APPROVED",
@@ -101,7 +113,7 @@
       ],
       "unknowns": [],
       "unresolved_contradictions": [],
-      "updated_at": "1795009277Z"
+      "updated_at": "1795009326Z"
     },
     "trajectory": {
       "active_boundaries": [
