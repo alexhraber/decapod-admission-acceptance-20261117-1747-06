@@ -1,25 +1,29 @@
 {
   "schema_version": "1.0.0",
   "baseline": {
-    "accepted_commit": "75530fa41693b2b6c062c366edf956b0e6d1eeb0"
+    "accepted_commit": "ada3eb89c3707801a5b86265dccc899fdabe5e1c"
   },
   "change": {
-    "id": "change_01M7NNJMQFJREGQY86XJ7S77BA",
-    "base_commit": "75530fa41693b2b6c062c366edf956b0e6d1eeb0",
+    "id": "change_01M7QA37Q6Q1P0B5MKVCZAPH7E",
+    "base_commit": "ada3eb89c3707801a5b86265dccc899fdabe5e1c",
     "target_base": "origin/acceptance/1757/launch-20261117-01-base"
+  },
+  "claims": {
+    "repository-read": {
+      "statement": "canRead requires active owning-organization membership and repository grant or ownership",
+      "falsifier": "Accepted authorization-contract fails any of ten literals",
+      "status": "open"
+    }
   },
   "checkpoints": [
     {
-      "id": "fixture-1757-accepted-projections",
-      "summary": "Prepare current native projections and accepted independent source assertions without repairing the seeded authorization defect",
-      "input_digest": "sha256:ddc95b73581b0a786d3afc645934646a6c22cd8692f97ec789d7c8b816cb2e14",
-      "proof_refs": [
-        "issue:1757:operator-fixture-preparation"
-      ]
+      "id": "baseline-preparation",
+      "summary": "Preserve accepted intent and baseline proof plan before any access changes",
+      "input_digest": "sha256:4c71bcb6661c857c30a385ea8574e70b9e3b29887bb4263718e03324266e225b"
     }
   ],
   "intents": {
-    "intent:change_01M7NNJMQFJREGQY86XJ7S77BA": {
+    "intent:change_01M7QA37Q6Q1P0B5MKVCZAPH7E": {
       "acceptance_criteria": [],
       "assumptions": [],
       "boundaries": [
@@ -29,11 +33,11 @@
         "root"
       ],
       "created_sequence": 1,
-      "id": "intent:change_01M7NNJMQFJREGQY86XJ7S77BA",
+      "id": "intent:change_01M7QA37Q6Q1P0B5MKVCZAPH7E",
       "out_of_scope": [],
       "proof_requirements": [],
-      "raw_intent": "Prepare issue 1757 isolated acceptance projections",
-      "refined_intent": "Prepare issue 1757 isolated acceptance projections",
+      "raw_intent": "Implement repository-scoped read authorization and publish verified PR (DecapodLabs/decapod #1758)",
+      "refined_intent": "Implement repository-scoped read authorization and publish verified PR (DecapodLabs/decapod #1758)",
       "status": "refined",
       "updated_sequence": 3
     }
@@ -42,81 +46,108 @@
     "plan": {
       "constraints": {
         "file_touch_budget": null,
-        "forbidden_paths": []
+        "forbidden_paths": [
+          "src/guard.txt",
+          ".decapod/config.toml"
+        ]
       },
       "deferred_questions": [],
       "human_questions": [],
-      "intent": "Prepare issue 1757 operator-seeded acceptance baseline with complete current projections and independently fixed assertions. Preserve the deliberately failing access implementation for the actual Pi experiment; do not supply its repair. All historical refs and PR 1 remain immutable.",
+      "intent": "Implement README repository read rules: active same-organization membership plus explicit repository grant or ownership; retain a genuine failing Decapod baseline before repair, preserve guard and accepted proof, validate and publish unmerged PR for DecapodLabs/decapod #1758.",
       "phases": [],
       "proof_hooks": [
         "decapod validate"
       ],
       "schema_version": "1.1.0",
-      "spec_reviews": [
-        {
-          "disposition": "updated",
-          "path": ".decapod/managed/specs/ARCHITECTURE.md",
-          "reason": "Operator-reviewed accepted repository access assertions and intentionally seeded defect; actual agent must diagnose and repair after a genuine failed required check.",
-          "reviewed_code_fingerprint": "4e2cacf2680f182547e1a3cee504514bba559d43ee55e96f8599980ea3113557",
-          "spec_material_hash": "0bacc73a3aa21c07fd972e4c0a34be876bf2ce3712d57f97804d93b41aac1924"
-        },
-        {
-          "disposition": "updated",
-          "path": ".decapod/managed/specs/INTERFACES.md",
-          "reason": "Operator-reviewed accepted repository access assertions and intentionally seeded defect; actual agent must diagnose and repair after a genuine failed required check.",
-          "reviewed_code_fingerprint": "4e2cacf2680f182547e1a3cee504514bba559d43ee55e96f8599980ea3113557",
-          "spec_material_hash": "ccccb42214f1643dbc9e332a827ab2420ec64430d22bb1e95a8c9830425e2cf5"
-        },
-        {
-          "disposition": "updated",
-          "path": ".decapod/managed/specs/SECURITY.md",
-          "reason": "Operator-reviewed accepted repository access assertions and intentionally seeded defect; actual agent must diagnose and repair after a genuine failed required check.",
-          "reviewed_code_fingerprint": "4e2cacf2680f182547e1a3cee504514bba559d43ee55e96f8599980ea3113557",
-          "spec_material_hash": "fadcfb12e190e89e4a18799a0f6aca5c10828436fe2d0c2b8c090224b90a9399"
-        }
-      ],
       "state": "APPROVED",
       "stop_conditions": [],
-      "title": "Prepare issue 1757 isolated acceptance projections",
+      "title": "Implement repository-scoped read authorization and publish verified PR (DecapodLabs/decapod #1758)",
       "todo_ids": [
-        "bugs_01m7nnj7zsmrrb7v"
+        "feat_01m7qa2pekjqstb7"
       ],
       "unknowns": [],
       "unresolved_contradictions": [],
-      "updated_at": "1794949877Z"
+      "updated_at": "1795004970Z"
     },
     "trajectory": {
       "active_boundaries": [
         "Current claimed task and isolated work branch"
       ],
-      "artifact_hash": "sha256:2c174ccb4829cf7cfb33269066f80b30f15f630f1df8283abe0ed017e9c86cf8",
-      "checks": [],
+      "artifact_hash": "sha256:eaecb8db95ffa58412e4d262253fc588f2c6c388ae7c1d2a5ff44a80ae4dc501",
+      "checks": [
+        {
+          "name": "baseline",
+          "status": "unavailable"
+        }
+      ],
       "current_phase": "intent",
       "custody": {
         "events": [
           {
             "event_id": "event:2",
-            "intent_id": "intent:change_01M7NNJMQFJREGQY86XJ7S77BA",
+            "intent_id": "intent:change_01M7QA37Q6Q1P0B5MKVCZAPH7E",
             "kind": "created",
             "sequence": 2
           },
           {
             "event_id": "event:3",
-            "intent_id": "intent:change_01M7NNJMQFJREGQY86XJ7S77BA",
+            "intent_id": "intent:change_01M7QA37Q6Q1P0B5MKVCZAPH7E",
             "kind": "refined",
             "sequence": 3
+          },
+          {
+            "detail": "trajectory:branch_01M7QA37TAVFKRG392KAZ2PGCR",
+            "event_id": "event:4",
+            "intent_id": "intent:change_01M7QA37Q6Q1P0B5MKVCZAPH7E",
+            "kind": "trajectory_step_recorded",
+            "sequence": 4
           }
         ],
         "knowledge_candidates": [],
-        "next_sequence": 3,
+        "next_sequence": 4,
         "schema_version": "1.0.0",
-        "trajectories": {}
+        "trajectories": {
+          "branch_01M7QA37TAVFKRG392KAZ2PGCR": {
+            "evidence_only": true,
+            "id": "branch_01M7QA37TAVFKRG392KAZ2PGCR",
+            "intent_id": "intent:change_01M7QA37Q6Q1P0B5MKVCZAPH7E",
+            "steps": [
+              {
+                "action": "trajectory.record",
+                "command": "decapod validate --format json",
+                "custody_event_id": "event:4",
+                "observations": [
+                  "README.md",
+                  "src/access.cjs",
+                  ".decapod/config.toml",
+                  "First validation blocked by draft plan before engineering checks; plan now approved. Continue seeded trajectory after init rejected to preserve journal."
+                ],
+                "proof_refs": [
+                  "baseline"
+                ],
+                "scope": [
+                  "root"
+                ],
+                "sequence": 4,
+                "validation_findings": []
+              }
+            ]
+          }
+        }
       },
-      "declared_commands": [],
+      "declared_commands": [
+        "decapod validate --format json"
+      ],
       "destination": "pull request",
-      "evidence": [],
-      "inspected_files": [],
-      "intent_id": "intent:change_01M7NNJMQFJREGQY86XJ7S77BA",
+      "evidence": [
+        "First validation blocked by draft plan before engineering checks; plan now approved. Continue seeded trajectory after init rejected to preserve journal."
+      ],
+      "inspected_files": [
+        ".decapod/config.toml",
+        "README.md",
+        "src/access.cjs"
+      ],
+      "intent_id": "intent:change_01M7QA37Q6Q1P0B5MKVCZAPH7E",
       "modified_files": [],
       "next_transitions": [
         "Refine plan and declare falsifiable checks"
@@ -124,10 +155,10 @@
       "repo_scope": [
         "root"
       ],
-      "run_id": "branch_01M7NNJMSKWRJGYAPMAYSDBE4B",
+      "run_id": "branch_01M7QA37TAVFKRG392KAZ2PGCR",
       "schema_version": "1.1.0",
       "shortcut_risk_signals": [],
-      "task_id": "bugs_01m7nnj7zsmrrb7v",
+      "task_id": "feat_01m7qa2pekjqstb7",
       "tool_calls": [],
       "unresolved_assumptions": []
     }
