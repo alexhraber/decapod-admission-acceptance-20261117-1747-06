@@ -11,9 +11,22 @@ Describe the configured project from purpose to architecture to implementation d
 Use the seeded context below as a starting point to verify against repository sources. Replace example diagrams, suggested controls, targets, tables, and blank fields with source-grounded prose; mark non-applicable topics with a reason. Do not adopt a store, queue, server, CI provider, replay guarantee, or service level merely because it appears in a template.
 
 ## Contract Principles
-- Prefer explicit schemas over implicit behavior.
-- Every mutating interface defines idempotency semantics.
-- Every failure path maps to a typed, documented error code.
+The public CommonJS export is `require('./src/access.cjs').canRead(actor,
+repository)`. It is a synchronous, side-effect-free Boolean predicate, not a
+mutating RPC or an authentication service.
+
+Actor records carry `id`, `organizationId`, `active`, and optional array
+`repositoryIds`; repository records carry `id`, `organizationId`, and `ownerId`.
+For well-formed IDs, authorization requires `active === true`, exact organization
+equality, and either exact owner equality or inclusion of the repository ID in
+the grants array. Null actors/repositories return false. Missing or malformed
+grant arrays deny nonowners; owners do not need a grant array. Revocation and
+foreign organization membership deny owners as well as ordinary members.
+
+Record authentication and ID validation remain caller responsibilities; this
+change does not introduce schema parsing, remote lookups, or durable state.
+Accepted proof covers ten specified actor combinations, not arbitrary malformed
+input or end-to-end caller authentication.
 
 ## Generated Contract Depth
 Generated interface specs should include:
@@ -124,7 +137,7 @@ the new issue-scoped target is independent. Admission never authorizes merge.
 
 ## Codebase Attestation
 
-- Repository signal fingerprint: `4e2cacf2680f182547e1a3cee504514bba559d43ee55e96f8599980ea3113557`
+- Repository signal fingerprint: `2fe66f34809a3076c48a682476ae2b859d57ae142d7999bd39a5fafd22588b25`
 - Significant implementation surfaces: `README.md/` (1 files), `src/` (2 files)
 - Refreshed from the current codebase by `decapod rpc --op specs.refresh`
 <!-- decapod:codebase-attestation:end -->

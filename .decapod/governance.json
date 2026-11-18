@@ -25,6 +25,14 @@
       "id": "baseline-spec",
       "summary": "Describe exact repository-read intent before changing seeded behavior",
       "input_digest": "sha256:e28c44398ae4a240d91ddf8920e58e68d5af803773ff2951a2ec2a8a93b9fd5f"
+    },
+    {
+      "id": "repository-read-repair",
+      "summary": "Restrict active organization members to exact grants or ownership; retain genuine failing accepted assertion baseline",
+      "input_digest": "sha256:47d179245507bc7ce7a3eca8281eac77482be0ec2e5a75470530c36e1a879f67",
+      "proof_refs": [
+        "evidence/1758-baseline/validation.json"
+      ]
     }
   ],
   "intents": {
@@ -78,14 +86,14 @@
       "active_boundaries": [
         "Current claimed task and isolated work branch"
       ],
-      "artifact_hash": "sha256:eaecb8db95ffa58412e4d262253fc588f2c6c388ae7c1d2a5ff44a80ae4dc501",
+      "artifact_hash": "sha256:122af2d842014770c17d5c866942e741a40378bc44d2daac49b297f332c4d926",
       "checks": [
         {
           "name": "baseline",
-          "status": "unavailable"
+          "status": "failed"
         }
       ],
-      "current_phase": "intent",
+      "current_phase": "repair",
       "custody": {
         "events": [
           {
@@ -106,10 +114,17 @@
             "intent_id": "intent:change_01M7QA37Q6Q1P0B5MKVCZAPH7E",
             "kind": "trajectory_step_recorded",
             "sequence": 4
+          },
+          {
+            "detail": "trajectory:branch_01M7QA37TAVFKRG392KAZ2PGCR",
+            "event_id": "event:5",
+            "intent_id": "intent:change_01M7QA37Q6Q1P0B5MKVCZAPH7E",
+            "kind": "trajectory_step_recorded",
+            "sequence": 5
           }
         ],
         "knowledge_candidates": [],
-        "next_sequence": 4,
+        "next_sequence": 5,
         "schema_version": "1.0.0",
         "trajectories": {
           "branch_01M7QA37TAVFKRG392KAZ2PGCR": {
@@ -135,6 +150,27 @@
                 ],
                 "sequence": 4,
                 "validation_findings": []
+              },
+              {
+                "action": "repair",
+                "command": "decapod validate --format json",
+                "custody_event_id": "event:5",
+                "observations": [
+                  "src/access.cjs",
+                  ".decapod/managed/specs/INTENT.md",
+                  ".decapod/managed/specs/ARCHITECTURE.md",
+                  ".decapod/managed/specs/INTERFACES.md",
+                  "evidence/1758-baseline/validation.json",
+                  "evidence/1758-baseline/native-0.stderr: AssertionError missing repository grant; actual true expected false on commit 414319b"
+                ],
+                "proof_refs": [
+                  "baseline"
+                ],
+                "scope": [
+                  "root"
+                ],
+                "sequence": 5,
+                "validation_findings": []
               }
             ]
           }
@@ -145,7 +181,9 @@
       ],
       "destination": "pull request",
       "evidence": [
-        "First validation blocked by draft plan before engineering checks; plan now approved. Continue seeded trajectory after init rejected to preserve journal."
+        "First validation blocked by draft plan before engineering checks; plan now approved. Continue seeded trajectory after init rejected to preserve journal.",
+        "evidence/1758-baseline/native-0.stderr: AssertionError missing repository grant; actual true expected false on commit 414319b",
+        "evidence/1758-baseline/validation.json"
       ],
       "inspected_files": [
         ".decapod/config.toml",
@@ -153,7 +191,12 @@
         "src/access.cjs"
       ],
       "intent_id": "intent:change_01M7QA37Q6Q1P0B5MKVCZAPH7E",
-      "modified_files": [],
+      "modified_files": [
+        ".decapod/managed/specs/ARCHITECTURE.md",
+        ".decapod/managed/specs/INTENT.md",
+        ".decapod/managed/specs/INTERFACES.md",
+        "src/access.cjs"
+      ],
       "next_transitions": [
         "Refine plan and declare falsifiable checks"
       ],
