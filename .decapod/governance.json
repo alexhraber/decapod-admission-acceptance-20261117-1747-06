@@ -20,6 +20,11 @@
       "id": "baseline-preparation",
       "summary": "Preserve accepted intent and baseline proof plan before any access changes",
       "input_digest": "sha256:4c71bcb6661c857c30a385ea8574e70b9e3b29887bb4263718e03324266e225b"
+    },
+    {
+      "id": "baseline-spec",
+      "summary": "Describe exact repository-read intent before changing seeded behavior",
+      "input_digest": "sha256:e28c44398ae4a240d91ddf8920e58e68d5af803773ff2951a2ec2a8a93b9fd5f"
     }
   ],
   "intents": {

@@ -133,6 +133,21 @@ flowchart LR
 
 ## Accepted repository access contract
 
+### Repository read outcome (REQ-REPOSITORY-READ)
+Callers use this library to decide whether an actor can read one repository.
+The target rule is conjunctive: active membership (`active === true`) in the
+repository's organization is mandatory, followed by either an explicit grant
+in `repositoryIds` for that exact `repository.id` or matching `ownerId`.
+Ownership must not bypass revocation or organization isolation. Missing grants
+must deny nonowners. No storage, network service, or membership lookup is added;
+callers supply authoritative actor and repository records.
+
+Before implementation, `src/access.cjs` grants access based on active organization
+membership alone. This deliberately seeded behavior is not the intended contract.
+Baseline validation must actually reach the accepted authorization command and
+retain its failing assertion, not merely fail a governance prerequisite. The
+independent `src/guard.txt` and accepted proof configuration remain unchanged.
+
 The application exports canRead(actor, repository) from src/access.cjs. Active
 organization membership alone is insufficient: explicit repository grant or
 active ownership is required, and revoked/foreign/anonymous actors are denied.
