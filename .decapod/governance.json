@@ -22,6 +22,11 @@
         "evidence/1758/baseline-authorization.stderr",
         "evidence/1758/baseline-validation.json"
       ]
+    },
+    {
+      "id": "interface-review",
+      "summary": "Record current-content interface review required by validation",
+      "input_digest": "sha256:2426d854d174aba204fe3b51b848fe2b6b0b140024607fea65a7417f2b165087"
     }
   ],
   "intents": {
@@ -61,6 +66,15 @@
         "decapod validate --format json"
       ],
       "schema_version": "1.1.0",
+      "spec_reviews": [
+        {
+          "disposition": "updated",
+          "path": ".decapod/managed/specs/INTERFACES.md",
+          "reason": "Reviewed canRead implementation: synchronous boolean; active same-organization membership gates ownership or array grant. Updated input fields, strict equality, denial behavior and trusted-record boundary.",
+          "reviewed_code_fingerprint": "55156d2bf8b0407fcf1cbc01c700f1082a2f9a10b74f359f24cc2ab88282bb21",
+          "spec_material_hash": "f6644a250f5b59c6f1af9563e083d5683b0ca6a40d75c9cf03a4f1394282a442"
+        }
+      ],
       "state": "APPROVED",
       "stop_conditions": [],
       "title": "Implement README repository-scoped read authorization and publish verified unmerged PR; retain failing baseline",
@@ -69,7 +83,7 @@
       ],
       "unknowns": [],
       "unresolved_contradictions": [],
-      "updated_at": "1795001767Z"
+      "updated_at": "1795001892Z"
     },
     "trajectory": {
       "active_boundaries": [
