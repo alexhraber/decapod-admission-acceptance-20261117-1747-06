@@ -33,6 +33,11 @@
       "proof_refs": [
         "evidence/1758-baseline/validation.json"
       ]
+    },
+    {
+      "id": "interface-review",
+      "summary": "Record source-bound interface review required by validation",
+      "input_digest": "sha256:87faac0aa69d2af1035550842d6f67acd6b850638e95d284b7fde664a2c8221e"
     }
   ],
   "intents": {
@@ -72,6 +77,15 @@
         "decapod validate"
       ],
       "schema_version": "1.1.0",
+      "spec_reviews": [
+        {
+          "disposition": "updated",
+          "path": ".decapod/managed/specs/INTERFACES.md",
+          "reason": "Reviewed canRead: synchronous Boolean with strict active and organization gates before exact owner or array grant; caller owns record validity; ten accepted actor cases and no I/O.",
+          "reviewed_code_fingerprint": "2fe66f34809a3076c48a682476ae2b859d57ae142d7999bd39a5fafd22588b25",
+          "spec_material_hash": "35730cd257debb9ea1d91292652e0a23d32b196e9a681ed19ee2bf646c50cf04"
+        }
+      ],
       "state": "APPROVED",
       "stop_conditions": [],
       "title": "Implement repository-scoped read authorization and publish verified PR (DecapodLabs/decapod #1758)",
@@ -80,7 +94,7 @@
       ],
       "unknowns": [],
       "unresolved_contradictions": [],
-      "updated_at": "1795004970Z"
+      "updated_at": "1795005120Z"
     },
     "trajectory": {
       "active_boundaries": [
