@@ -43,6 +43,11 @@
       "id": "architecture-intent-review",
       "summary": "Record source-grounded architecture and intent reviews",
       "input_digest": "sha256:3c89e01c9fb34de88cecc71faf5d311f510a784ab2e729e6b90d46ae15107edd"
+    },
+    {
+      "id": "security-review",
+      "summary": "Document and review resource authorization boundary and explicit assurance limitations",
+      "input_digest": "sha256:4766dffcf1cff01efb51d3a16471fce71e10811a9c956e474d961fa15684d602"
     }
   ],
   "intents": {
@@ -96,6 +101,13 @@
           "reason": "Reviewed canRead: synchronous Boolean with strict active and organization gates before exact owner or array grant; caller owns record validity; ten accepted actor cases and no I/O.",
           "reviewed_code_fingerprint": "2fe66f34809a3076c48a682476ae2b859d57ae142d7999bd39a5fafd22588b25",
           "spec_material_hash": "35730cd257debb9ea1d91292652e0a23d32b196e9a681ed19ee2bf646c50cf04"
+        },
+        {
+          "disposition": "updated",
+          "path": ".decapod/managed/specs/SECURITY.md",
+          "reason": "Reviewed authorization trust boundary: exact grant or ownership inside strict active organization gate; authoritative record validation remains caller responsibility; no new dependencies or secrets.",
+          "reviewed_code_fingerprint": "2fe66f34809a3076c48a682476ae2b859d57ae142d7999bd39a5fafd22588b25",
+          "spec_material_hash": "cf1c1b994d0f9ac909b68a4e568b72b652f991061d403978664bdab69cab6806"
         }
       ],
       "state": "APPROVED",
@@ -106,7 +118,7 @@
       ],
       "unknowns": [],
       "unresolved_contradictions": [],
-      "updated_at": "1795005143Z"
+      "updated_at": "1795005181Z"
     },
     "trajectory": {
       "active_boundaries": [
