@@ -131,6 +131,17 @@ flowchart LR
 | Which non-functional target is hardest to hit? | TBD | YYYY-MM-DD | |
 
 
+## Regression baseline and repair scope
+
+`src/access.cjs` currently checks only active organization membership. This
+allows a member without a grant to read any repository in that organization,
+contrary to README.md. Before repairing this predicate, collect the accepted
+`authorization-contract` failure through structured Decapod validation. A
+prerequisite or staging failure is not evidence of the authorization regression.
+Keep `src/guard.txt` and the accepted proof commands unchanged. The repair must
+retain the active membership and organization checks and add repository-scoped
+ownership/grant authorization. Publication remains unmerged.
+
 ## Accepted repository access contract
 
 The application exports canRead(actor, repository) from src/access.cjs. Active

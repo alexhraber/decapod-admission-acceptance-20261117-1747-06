@@ -1,25 +1,22 @@
 {
   "schema_version": "1.0.0",
   "baseline": {
-    "accepted_commit": "75530fa41693b2b6c062c366edf956b0e6d1eeb0"
+    "accepted_commit": "ada3eb89c3707801a5b86265dccc899fdabe5e1c"
   },
   "change": {
-    "id": "change_01M7NNJMQFJREGQY86XJ7S77BA",
-    "base_commit": "75530fa41693b2b6c062c366edf956b0e6d1eeb0",
+    "id": "change_01M7Q71JHFX2ZT8P8T26HC9FK1",
+    "base_commit": "ada3eb89c3707801a5b86265dccc899fdabe5e1c",
     "target_base": "origin/acceptance/1757/launch-20261117-01-base"
   },
   "checkpoints": [
     {
-      "id": "fixture-1757-accepted-projections",
-      "summary": "Prepare current native projections and accepted independent source assertions without repairing the seeded authorization defect",
-      "input_digest": "sha256:ddc95b73581b0a786d3afc645934646a6c22cd8692f97ec789d7c8b816cb2e14",
-      "proof_refs": [
-        "issue:1757:operator-fixture-preparation"
-      ]
+      "id": "baseline-setup",
+      "summary": "Document seeded authorization defect before behavior repair",
+      "input_digest": "sha256:842b748f005af3c9050fd2e5bfbd2f8f58aca3761ff43bef77da5a6776359982"
     }
   ],
   "intents": {
-    "intent:change_01M7NNJMQFJREGQY86XJ7S77BA": {
+    "intent:change_01M7Q71JHFX2ZT8P8T26HC9FK1": {
       "acceptance_criteria": [],
       "assumptions": [],
       "boundaries": [
@@ -29,11 +26,11 @@
         "root"
       ],
       "created_sequence": 1,
-      "id": "intent:change_01M7NNJMQFJREGQY86XJ7S77BA",
+      "id": "intent:change_01M7Q71JHFX2ZT8P8T26HC9FK1",
       "out_of_scope": [],
       "proof_requirements": [],
-      "raw_intent": "Prepare issue 1757 isolated acceptance projections",
-      "refined_intent": "Prepare issue 1757 isolated acceptance projections",
+      "raw_intent": "Implement README repository-scoped read authorization and publish verified unmerged PR; retain failing baseline",
+      "refined_intent": "Implement README repository-scoped read authorization and publish verified unmerged PR; retain failing baseline",
       "status": "refined",
       "updated_sequence": 3
     }
@@ -42,81 +39,93 @@
     "plan": {
       "constraints": {
         "file_touch_budget": null,
-        "forbidden_paths": []
+        "forbidden_paths": [
+          "src/guard.txt",
+          ".decapod/config.toml"
+        ]
       },
       "deferred_questions": [],
       "human_questions": [],
-      "intent": "Prepare issue 1757 operator-seeded acceptance baseline with complete current projections and independently fixed assertions. Preserve the deliberately failing access implementation for the actual Pi experiment; do not supply its repair. All historical refs and PR 1 remain immutable.",
+      "intent": "Implement README authorization: active same-organization actors require repository ownership or explicit repository grant. Retain structured failing baseline before behavior changes; preserve independent guard and accepted proof; publish verified unmerged PR.",
       "phases": [],
       "proof_hooks": [
-        "decapod validate"
+        "decapod validate --format json"
       ],
       "schema_version": "1.1.0",
-      "spec_reviews": [
-        {
-          "disposition": "updated",
-          "path": ".decapod/managed/specs/ARCHITECTURE.md",
-          "reason": "Operator-reviewed accepted repository access assertions and intentionally seeded defect; actual agent must diagnose and repair after a genuine failed required check.",
-          "reviewed_code_fingerprint": "4e2cacf2680f182547e1a3cee504514bba559d43ee55e96f8599980ea3113557",
-          "spec_material_hash": "0bacc73a3aa21c07fd972e4c0a34be876bf2ce3712d57f97804d93b41aac1924"
-        },
-        {
-          "disposition": "updated",
-          "path": ".decapod/managed/specs/INTERFACES.md",
-          "reason": "Operator-reviewed accepted repository access assertions and intentionally seeded defect; actual agent must diagnose and repair after a genuine failed required check.",
-          "reviewed_code_fingerprint": "4e2cacf2680f182547e1a3cee504514bba559d43ee55e96f8599980ea3113557",
-          "spec_material_hash": "ccccb42214f1643dbc9e332a827ab2420ec64430d22bb1e95a8c9830425e2cf5"
-        },
-        {
-          "disposition": "updated",
-          "path": ".decapod/managed/specs/SECURITY.md",
-          "reason": "Operator-reviewed accepted repository access assertions and intentionally seeded defect; actual agent must diagnose and repair after a genuine failed required check.",
-          "reviewed_code_fingerprint": "4e2cacf2680f182547e1a3cee504514bba559d43ee55e96f8599980ea3113557",
-          "spec_material_hash": "fadcfb12e190e89e4a18799a0f6aca5c10828436fe2d0c2b8c090224b90a9399"
-        }
-      ],
       "state": "APPROVED",
       "stop_conditions": [],
-      "title": "Prepare issue 1757 isolated acceptance projections",
+      "title": "Implement README repository-scoped read authorization and publish verified unmerged PR; retain failing baseline",
       "todo_ids": [
-        "bugs_01m7nnj7zsmrrb7v"
+        "feat_01m7q70ywdd66fm8"
       ],
       "unknowns": [],
       "unresolved_contradictions": [],
-      "updated_at": "1794949877Z"
+      "updated_at": "1795001767Z"
     },
     "trajectory": {
       "active_boundaries": [
         "Current claimed task and isolated work branch"
       ],
-      "artifact_hash": "sha256:2c174ccb4829cf7cfb33269066f80b30f15f630f1df8283abe0ed017e9c86cf8",
+      "artifact_hash": "sha256:ac56f134ae44dd81bb80bf16d541dca3182401c14328ce0b0c9c7d1c52accb2b",
       "checks": [],
       "current_phase": "intent",
       "custody": {
         "events": [
           {
             "event_id": "event:2",
-            "intent_id": "intent:change_01M7NNJMQFJREGQY86XJ7S77BA",
+            "intent_id": "intent:change_01M7Q71JHFX2ZT8P8T26HC9FK1",
             "kind": "created",
             "sequence": 2
           },
           {
             "event_id": "event:3",
-            "intent_id": "intent:change_01M7NNJMQFJREGQY86XJ7S77BA",
+            "intent_id": "intent:change_01M7Q71JHFX2ZT8P8T26HC9FK1",
             "kind": "refined",
             "sequence": 3
+          },
+          {
+            "detail": "trajectory:branch_01M7Q71JMN1PRMSBMZA1KC5AJB",
+            "event_id": "event:4",
+            "intent_id": "intent:change_01M7Q71JHFX2ZT8P8T26HC9FK1",
+            "kind": "trajectory_step_recorded",
+            "sequence": 4
           }
         ],
         "knowledge_candidates": [],
-        "next_sequence": 3,
+        "next_sequence": 4,
         "schema_version": "1.0.0",
-        "trajectories": {}
+        "trajectories": {
+          "branch_01M7Q71JMN1PRMSBMZA1KC5AJB": {
+            "evidence_only": true,
+            "id": "branch_01M7Q71JMN1PRMSBMZA1KC5AJB",
+            "intent_id": "intent:change_01M7Q71JHFX2ZT8P8T26HC9FK1",
+            "steps": [
+              {
+                "action": "trajectory.record",
+                "custody_event_id": "event:4",
+                "observations": [
+                  "README.md",
+                  ".decapod/config.toml"
+                ],
+                "proof_refs": [],
+                "scope": [
+                  "root"
+                ],
+                "sequence": 4,
+                "validation_findings": []
+              }
+            ]
+          }
+        }
       },
       "declared_commands": [],
       "destination": "pull request",
       "evidence": [],
-      "inspected_files": [],
-      "intent_id": "intent:change_01M7NNJMQFJREGQY86XJ7S77BA",
+      "inspected_files": [
+        ".decapod/config.toml",
+        "README.md"
+      ],
+      "intent_id": "intent:change_01M7Q71JHFX2ZT8P8T26HC9FK1",
       "modified_files": [],
       "next_transitions": [
         "Refine plan and declare falsifiable checks"
@@ -124,10 +133,10 @@
       "repo_scope": [
         "root"
       ],
-      "run_id": "branch_01M7NNJMSKWRJGYAPMAYSDBE4B",
+      "run_id": "branch_01M7Q71JMN1PRMSBMZA1KC5AJB",
       "schema_version": "1.1.0",
       "shortcut_risk_signals": [],
-      "task_id": "bugs_01m7nnj7zsmrrb7v",
+      "task_id": "feat_01m7q70ywdd66fm8",
       "tool_calls": [],
       "unresolved_assumptions": []
     }
