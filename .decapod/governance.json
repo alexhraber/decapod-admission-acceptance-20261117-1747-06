@@ -20,6 +20,11 @@
       "id": "baseline-governance",
       "summary": "Record authorization intent before measuring seeded baseline",
       "input_digest": "sha256:0ec99bbba1e88263b4459caa60b82aee17708f869c41871927dbcd03759832e4"
+    },
+    {
+      "id": "baseline-spec",
+      "summary": "Document intended access contract and seeded implementation gap before baseline proof",
+      "input_digest": "sha256:df3d5d2af20efe1ad23d233ef451fafafdaa3bd6e48639535b7689e4ad3d4aac"
     }
   ],
   "intents": {
