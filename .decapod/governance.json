@@ -27,6 +27,11 @@
       "id": "interface-review",
       "summary": "Record current-content interface review required by validation",
       "input_digest": "sha256:2426d854d174aba204fe3b51b848fe2b6b0b140024607fea65a7417f2b165087"
+    },
+    {
+      "id": "architecture-security-review",
+      "summary": "Record source-grounded architecture and security reviews",
+      "input_digest": "sha256:cc100963844af2034954a75a623e7dd0b75853daed9035a5b0445a4f4d679c32"
     }
   ],
   "intents": {
@@ -69,10 +74,24 @@
       "spec_reviews": [
         {
           "disposition": "updated",
+          "path": ".decapod/managed/specs/ARCHITECTURE.md",
+          "reason": "Reviewed src/access.cjs: pure synchronous predicate with membership gating repository-specific ownership/grant. Updated actual component flow, lack of persistence/network/cache, caller trust boundary and independent guard.",
+          "reviewed_code_fingerprint": "55156d2bf8b0407fcf1cbc01c700f1082a2f9a10b74f359f24cc2ab88282bb21",
+          "spec_material_hash": "352afff85fd4e324d1e435e1d0507796320b42502dc95ef3be6ec9bb59e6141f"
+        },
+        {
+          "disposition": "updated",
           "path": ".decapod/managed/specs/INTERFACES.md",
           "reason": "Reviewed canRead implementation: synchronous boolean; active same-organization membership gates ownership or array grant. Updated input fields, strict equality, denial behavior and trusted-record boundary.",
           "reviewed_code_fingerprint": "55156d2bf8b0407fcf1cbc01c700f1082a2f9a10b74f359f24cc2ab88282bb21",
           "spec_material_hash": "f6644a250f5b59c6f1af9563e083d5683b0ca6a40d75c9cf03a4f1394282a442"
+        },
+        {
+          "disposition": "unchanged_with_reason",
+          "path": ".decapod/managed/specs/SECURITY.md",
+          "reason": "Accepted repository access contract already specifies active ownership or explicit grant and rejects revoked/foreign/anonymous actors. Reviewed repaired predicate and retained accepted assertions/guard; no new authentication, secrets or runtime dependency is introduced. Template controls are not runtime guarantees.",
+          "reviewed_code_fingerprint": "55156d2bf8b0407fcf1cbc01c700f1082a2f9a10b74f359f24cc2ab88282bb21",
+          "spec_material_hash": "fadcfb12e190e89e4a18799a0f6aca5c10828436fe2d0c2b8c090224b90a9399"
         }
       ],
       "state": "APPROVED",
@@ -83,7 +102,7 @@
       ],
       "unknowns": [],
       "unresolved_contradictions": [],
-      "updated_at": "1795001892Z"
+      "updated_at": "1795001931Z"
     },
     "trajectory": {
       "active_boundaries": [
