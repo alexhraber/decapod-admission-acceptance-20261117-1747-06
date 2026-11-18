@@ -33,6 +33,11 @@
       "proof_refs": [
         "/tmp/auth-baseline-measured.json"
       ]
+    },
+    {
+      "id": "spec-review",
+      "summary": "Record content-bound review of authorization specs against implementation",
+      "input_digest": "sha256:818064fb766a2c99937d0622843177601c1b373d71dc64e967c50c9a06528356"
     }
   ],
   "intents": {
@@ -72,6 +77,22 @@
         "decapod validate"
       ],
       "schema_version": "1.1.0",
+      "spec_reviews": [
+        {
+          "disposition": "updated",
+          "path": ".decapod/managed/specs/ARCHITECTURE.md",
+          "reason": "Pure CommonJS predicate has no IO or new dependency; independent guard unchanged",
+          "reviewed_code_fingerprint": "74b22afcbf0532a3e9a965b9fff4982f35339d55c4d0d3dac83a5889ee734959",
+          "spec_material_hash": "aa1acf6240cbf242082244436379101c99aafb9792be739dfa9164e3c4364f1e"
+        },
+        {
+          "disposition": "updated",
+          "path": ".decapod/managed/specs/INTERFACES.md",
+          "reason": "Compared canRead implementation with documented strict active membership, organization match, owner alternative and array grant inclusion; synchronous boolean interface unchanged",
+          "reviewed_code_fingerprint": "74b22afcbf0532a3e9a965b9fff4982f35339d55c4d0d3dac83a5889ee734959",
+          "spec_material_hash": "59e7aad227cac8d5545bfc4c4d0780fe72ec8e37dce8f24c598f3a49ded08e97"
+        }
+      ],
       "state": "APPROVED",
       "stop_conditions": [],
       "title": "Implement README repository-scoped read authorization and publish verified unmerged PR",
@@ -80,7 +101,7 @@
       ],
       "unknowns": [],
       "unresolved_contradictions": [],
-      "updated_at": "1795008950Z"
+      "updated_at": "1795009277Z"
     },
     "trajectory": {
       "active_boundaries": [
