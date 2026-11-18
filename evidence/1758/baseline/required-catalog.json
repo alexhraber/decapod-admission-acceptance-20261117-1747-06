@@ -1,0 +1,78 @@
+{
+  "profile_id": "repo.pr-readiness.v1",
+  "obligations": [
+    {
+      "key": {
+        "provider": "native",
+        "workflow": ".decapod/config.toml",
+        "job": "authorization-contract",
+        "matrix": {},
+        "profile": "repo.pr-readiness.v1"
+      },
+      "kind": "repository_local",
+      "role": "SourceCheck",
+      "definition_digest": "sha256:640102d4aa62b66a20928475fb1fe08092be09baac418498bf6a6b3da3725157"
+    },
+    {
+      "key": {
+        "provider": "native",
+        "workflow": ".decapod/config.toml",
+        "job": "guard-contract",
+        "matrix": {},
+        "profile": "repo.pr-readiness.v1"
+      },
+      "kind": "repository_local",
+      "role": "SourceCheck",
+      "definition_digest": "sha256:89b00829b06c96f3c4743669853c6daa9fa8798c4165bc890bd65186c27380fc"
+    }
+  ],
+  "exclusions": [],
+  "stage_dispositions": [
+    {
+      "stage": "authorization-contract",
+      "key": {
+        "provider": "native",
+        "workflow": ".decapod/config.toml",
+        "job": "authorization-contract",
+        "matrix": {},
+        "profile": "repo.pr-readiness.v1"
+      },
+      "disposition": "real",
+      "policy": "repo.pr-readiness.v1",
+      "reason": "Required repository-declared local command; actual bounded execution is mandatory",
+      "evidence_scope": "repository_local_readiness"
+    },
+    {
+      "stage": "guard-contract",
+      "key": {
+        "provider": "native",
+        "workflow": ".decapod/config.toml",
+        "job": "guard-contract",
+        "matrix": {},
+        "profile": "repo.pr-readiness.v1"
+      },
+      "disposition": "real",
+      "policy": "repo.pr-readiness.v1",
+      "reason": "Required repository-declared local command; actual bounded execution is mandatory",
+      "evidence_scope": "repository_local_readiness"
+    },
+    {
+      "stage": "hosted-ci-and-release",
+      "key": null,
+      "disposition": "non_applicable",
+      "policy": "repo.pr-readiness.v1",
+      "reason": "Local contract mappings do not attest hosted workflow, platform matrix, release packaging or deployment execution",
+      "evidence_scope": "no_hosted_ci_or_release_assurance"
+    }
+  ],
+  "facts": {
+    "event": "pull_request",
+    "target_branch": "acceptance/1757/launch-20261117-01-base",
+    "changed_paths": [
+      ".decapod/governance.json",
+      ".decapod/managed/specs/.manifest.json",
+      ".decapod/managed/specs/INTENT.md"
+    ]
+  },
+  "source_inventory_digest": "sha256:6f7e5c7c150a4430f0d984b80c60c11374fb50fc4ba1759d77f1c17a5dc839b7"
+}

@@ -131,6 +131,28 @@ flowchart LR
 | Which non-functional target is hardest to hit? | TBD | YYYY-MM-DD | |
 
 
+## Baseline investigation (#1758)
+
+The repository is a small JavaScript authorization library for callers deciding
+whether an organization actor may read a repository. `README.md` requires active
+owning-organization membership and either ownership or an explicit repository
+grant. The inspected seeded `src/access.cjs::canRead` currently checks only
+active organization membership; this is an implementation gap, not accepted
+behavior. Before modifying it, execute the unchanged accepted proof commands
+through structured Decapod validation and retain the actual assertion failure.
+A staging/readiness blocker alone does not establish that baseline. Preserve
+`src/guard.txt`, proof declarations, historical refs and PR #1; no merge is in scope.
+
+## Repository-scoped outcome
+
+`src/access.cjs::canRead` now requires active membership in the repository's
+organization before considering either ownership or an explicit matching grant.
+This closes the seeded organization-wide access defect. The original failing
+assertion is retained in `evidence/1758/baseline/`: the unchanged accepted command
+rejected the seeded implementation for allowing a member with no repository grant.
+Fresh full validation is still required for the repaired candidate. No merge,
+identity provider, membership mutation, or hosted-CI assurance is in scope.
+
 ## Accepted repository access contract
 
 The application exports canRead(actor, repository) from src/access.cjs. Active
@@ -148,7 +170,7 @@ the new issue-scoped target is independent. Admission never authorizes merge.
 
 ## Codebase Attestation
 
-- Repository signal fingerprint: `4e2cacf2680f182547e1a3cee504514bba559d43ee55e96f8599980ea3113557`
+- Repository signal fingerprint: `e22c2de1cb0f556fed76b9406212387fedec6f3e6e561a22a9b058e7e8b33315`
 - Significant implementation surfaces: `README.md/` (1 files), `src/` (2 files)
 - Refreshed from the current codebase by `decapod rpc --op specs.refresh`
 <!-- decapod:codebase-attestation:end -->

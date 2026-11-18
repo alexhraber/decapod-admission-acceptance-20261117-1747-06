@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.1.0",
+  "policy_digest": "sha256:8b7c65979194108afdc1f405e8361c9e81d6aaf1d308dc6d39c2e3481127be66",
+  "source_inventory_digest": "sha256:6f7e5c7c150a4430f0d984b80c60c11374fb50fc4ba1759d77f1c17a5dc839b7",
+  "buildkite_enabled": false,
+  "checks": [
+    {
+      "key": {
+        "provider": "native",
+        "workflow": ".decapod/config.toml",
+        "job": "authorization-contract",
+        "matrix": {},
+        "profile": "repo.pr-readiness.v1"
+      },
+      "kind": "repository_local",
+      "definition_digest": "sha256:640102d4aa62b66a20928475fb1fe08092be09baac418498bf6a6b3da3725157",
+      "invocation_digest": "sha256:5e5a34721200260783b6c1f745b86762c3e3a6328d80a98850d666466e055aae",
+      "toolchain_digest": "sha256:0a316aadf931418f2b847e4113d732ffdae8d04d95905f5ec6668a6b84ad1a99",
+      "executor": "native",
+      "dependencies": [],
+      "requirement": {
+        "kind": "execute"
+      }
+    },
+    {
+      "key": {
+        "provider": "native",
+        "workflow": ".decapod/config.toml",
+        "job": "guard-contract",
+        "matrix": {},
+        "profile": "repo.pr-readiness.v1"
+      },
+      "kind": "repository_local",
+      "definition_digest": "sha256:89b00829b06c96f3c4743669853c6daa9fa8798c4165bc890bd65186c27380fc",
+      "invocation_digest": "sha256:a5e57e5018f93b1f19fcc2cd18e81b931be801e7c57a26a24eb16a6c039a8da7",
+      "toolchain_digest": "sha256:c747cf748a99694528700f6f82ab4cb19557338ba1f0e2c5b3af97f4c304b5c2",
+      "executor": "native",
+      "dependencies": [],
+      "requirement": {
+        "kind": "execute"
+      }
+    }
+  ]
+}
