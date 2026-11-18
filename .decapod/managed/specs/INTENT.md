@@ -11,7 +11,9 @@ Describe the configured project from purpose to architecture to implementation d
 Use the seeded context below as a starting point to verify against repository sources. Replace example diagrams, suggested controls, targets, tables, and blank fields with source-grounded prose; mark non-applicable topics with a reason. Do not adopt a store, queue, server, CI provider, replay guarantee, or service level merely because it appears in a template.
 
 ## Product Outcome
-- An isolated repository access module with accepted independent source checks and exact-evidence GitHub publication
+Repository authorization acceptance supplies a synchronous JavaScript read decision to callers through `src/access.cjs::canRead`. README.md requires active membership in the repository's owning organization and either an explicit grant for that repository or repository ownership. Anonymous actors, revoked members (including owners), foreign organizations, and unrelated grants must be denied.
+
+The seeded implementation checked only active organization membership. The implementation now additionally requires ownership or a matching repository grant; active membership and organization matching remain mandatory for owners too. Before changing it, retain a failing `decapod validate --format json` observation of the independently accepted authorization command. Preserve `src/guard.txt` and the accepted proof configuration unchanged. Publication is an unmerged Decapod PR; deployment and merge are out of scope.
 
 ## What This Project Is
 Repository authorization acceptance is a service_or_library project built using JavaScript.
@@ -148,7 +150,7 @@ the new issue-scoped target is independent. Admission never authorizes merge.
 
 ## Codebase Attestation
 
-- Repository signal fingerprint: `4e2cacf2680f182547e1a3cee504514bba559d43ee55e96f8599980ea3113557`
+- Repository signal fingerprint: `74b22afcbf0532a3e9a965b9fff4982f35339d55c4d0d3dac83a5889ee734959`
 - Significant implementation surfaces: `README.md/` (1 files), `src/` (2 files)
 - Refreshed from the current codebase by `decapod rpc --op specs.refresh`
 <!-- decapod:codebase-attestation:end -->
