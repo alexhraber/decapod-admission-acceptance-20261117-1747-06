@@ -38,10 +38,17 @@ Generated interface specs should include:
 | `TODO` | `TODO` | `TODO` | `TODO` | `TODO` |
 
 ## Inbound Contracts
-- API / RPC entrypoints:
-- CLI surfaces:
-- Event/webhook consumers:
-- Repository-detected surfaces: not detected yet
+`require('./src/access.cjs').canRead(actor, repository)` returns a boolean.
+Actors carry `id`, `organizationId`, `active`, and optional `repositoryIds`
+(array of repository IDs); repositories carry `id`, `organizationId`, `ownerId`.
+IDs are compared without coercion. `null`/absent actors are denied; missing active
+membership is denied. Non-owners need an array grant for this exact repository.
+Owners need no grant but must be active members of the owning organization.
+Inputs are trusted application records, not authenticated by this function;
+arbitrary malformed records/getters are outside the accepted contract.
+No API server, events, writes, retries or external dependencies are implemented.
+The export and boolean result stay compatible; organization-wide implicit access
+is intentionally removed in accordance with README.md.
 
 ## Data Ownership
 - Source-of-truth tables/collections:
@@ -124,7 +131,7 @@ the new issue-scoped target is independent. Admission never authorizes merge.
 
 ## Codebase Attestation
 
-- Repository signal fingerprint: `4e2cacf2680f182547e1a3cee504514bba559d43ee55e96f8599980ea3113557`
+- Repository signal fingerprint: `55156d2bf8b0407fcf1cbc01c700f1082a2f9a10b74f359f24cc2ab88282bb21`
 - Significant implementation surfaces: `README.md/` (1 files), `src/` (2 files)
 - Refreshed from the current codebase by `decapod rpc --op specs.refresh`
 <!-- decapod:codebase-attestation:end -->
