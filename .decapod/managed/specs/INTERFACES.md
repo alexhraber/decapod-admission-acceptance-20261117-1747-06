@@ -107,6 +107,20 @@ export enum ApiErrorCode {
 - [ ] Backward compatibility or migration instructions are published.
 
 
+## Implemented CommonJS contract
+
+Consumers require `src/access.cjs` and invoke `canRead(actor, repository)` to get
+a boolean. Repository records supply `id`, `organizationId`, and `ownerId`;
+actor records supply `id`, `organizationId`, `active`, and optionally an array
+`repositoryIds`. The supported record contract assumes valid identity fields and
+a repository object; this change does not add a general schema validator.
+Null actors, non-true `active`, or organization mismatch are denied. Within that
+boundary, matching ownership permits access without grants; other actors require
+an array containing the exact repository ID. Missing or non-array grants cannot
+authorize a non-owner. The function neither mutates inputs nor performs I/O.
+The ten accepted literal assertions in `.decapod/config.toml`, plus the independent
+guard check, remain the authoritative required proof, not an agent-authored test.
+
 ## Accepted repository access contract
 
 The application exports canRead(actor, repository) from src/access.cjs. Active
@@ -124,7 +138,7 @@ the new issue-scoped target is independent. Admission never authorizes merge.
 
 ## Codebase Attestation
 
-- Repository signal fingerprint: `4e2cacf2680f182547e1a3cee504514bba559d43ee55e96f8599980ea3113557`
+- Repository signal fingerprint: `e22c2de1cb0f556fed76b9406212387fedec6f3e6e561a22a9b058e7e8b33315`
 - Significant implementation surfaces: `README.md/` (1 files), `src/` (2 files)
 - Refreshed from the current codebase by `decapod rpc --op specs.refresh`
 <!-- decapod:codebase-attestation:end -->

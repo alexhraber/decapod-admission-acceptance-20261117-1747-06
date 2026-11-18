@@ -1,0 +1,16 @@
+{
+  "check": {
+    "job": "authorization-contract",
+    "matrix": {},
+    "profile": "repo.pr-readiness.v1",
+    "provider": "native",
+    "workflow": ".decapod/config.toml"
+  },
+  "duration_ms": 121,
+  "error": "native check did not succeed: CheckKey { provider: Native, workflow: \".decapod/config.toml\", job: \"authorization-contract\", matrix: {}, profile: \"repo.pr-readiness.v1\" }",
+  "schema_version": "1.0.0",
+  "stderr": "native-0.stderr",
+  "stdout": "native-0.stdout",
+  "steps": "native-0.steps.json",
+  "termination": "exited"
+}

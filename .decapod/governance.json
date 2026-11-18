@@ -8,11 +8,26 @@
     "base_commit": "ada3eb89c3707801a5b86265dccc899fdabe5e1c",
     "target_base": "origin/acceptance/1757/launch-20261117-01-base"
   },
+  "claims": {
+    "scoped-read": {
+      "statement": "Active owning-organization membership requires repository ownership or an explicit matching repository grant",
+      "falsifier": "Any accepted authorization assertion fails or independent source guard changes",
+      "status": "open"
+    }
+  },
   "checkpoints": [
     {
       "id": "baseline-preparation",
       "summary": "Prepare governed baseline without modifying seeded authorization or guard",
       "input_digest": "sha256:2bdeda1c06415bd7777bd8c6715795080f7307524819400547327f04ab987e55"
+    },
+    {
+      "id": "scoped-read-fix",
+      "summary": "Restrict read access to owner or explicit repository grant after active owning-org membership; retain failing baseline",
+      "input_digest": "sha256:40bfec738cfa1e4bc7d97b49cd9343866055dfd31103ba566c5cefb79c8b3401",
+      "proof_refs": [
+        "evidence/1758/baseline/validation.json"
+      ]
     }
   ],
   "intents": {
@@ -66,9 +81,14 @@
       "active_boundaries": [
         "Current claimed task and isolated work branch"
       ],
-      "artifact_hash": "sha256:f100cdaf43010790c4e4c56782f7b0dae2d644d62929ff07be04c32de34cc931",
-      "checks": [],
-      "current_phase": "intent",
+      "artifact_hash": "sha256:009eeb6c4abc0d9a982a969c814e783abe04c51df69e0949ec282f7a523d6555",
+      "checks": [
+        {
+          "name": "seeded_authorization",
+          "status": "failed"
+        }
+      ],
+      "current_phase": "repair",
       "custody": {
         "events": [
           {
@@ -89,10 +109,24 @@
             "intent_id": "intent:change_01M7QAHBX4AX4H6TKTH5871P97",
             "kind": "trajectory_step_recorded",
             "sequence": 4
+          },
+          {
+            "detail": "trajectory:branch_01M7QAHC03ECTG7SQKKKK9RY0Z",
+            "event_id": "event:5",
+            "intent_id": "intent:change_01M7QAHBX4AX4H6TKTH5871P97",
+            "kind": "trajectory_step_recorded",
+            "sequence": 5
+          },
+          {
+            "detail": "trajectory:branch_01M7QAHC03ECTG7SQKKKK9RY0Z",
+            "event_id": "event:6",
+            "intent_id": "intent:change_01M7QAHBX4AX4H6TKTH5871P97",
+            "kind": "trajectory_step_recorded",
+            "sequence": 6
           }
         ],
         "knowledge_candidates": [],
-        "next_sequence": 4,
+        "next_sequence": 6,
         "schema_version": "1.0.0",
         "trajectories": {
           "branch_01M7QAHC03ECTG7SQKKKK9RY0Z": {
@@ -113,20 +147,65 @@
                 ],
                 "sequence": 4,
                 "validation_findings": []
+              },
+              {
+                "action": "repair",
+                "command": "decapod validate --format json",
+                "custody_event_id": "event:5",
+                "observations": [
+                  "src/access.cjs",
+                  "evidence/1758/baseline/validation.json",
+                  "evidence/1758/baseline/native-0.stderr"
+                ],
+                "proof_refs": [
+                  "seeded_authorization"
+                ],
+                "scope": [
+                  "root"
+                ],
+                "sequence": 5,
+                "validation_findings": []
+              },
+              {
+                "action": "trajectory.record",
+                "custody_event_id": "event:6",
+                "observations": [
+                  "src/access.cjs",
+                  ".decapod/managed/specs/INTENT.md",
+                  ".decapod/managed/specs/ARCHITECTURE.md",
+                  ".decapod/managed/specs/INTERFACES.md"
+                ],
+                "proof_refs": [],
+                "scope": [
+                  "root"
+                ],
+                "sequence": 6,
+                "validation_findings": []
               }
             ]
           }
         }
       },
-      "declared_commands": [],
+      "declared_commands": [
+        "decapod validate --format json"
+      ],
       "destination": "pull request",
-      "evidence": [],
+      "evidence": [
+        "evidence/1758/baseline/native-0.stderr",
+        "evidence/1758/baseline/validation.json"
+      ],
       "inspected_files": [
         ".decapod/config.toml",
-        "README.md"
+        "README.md",
+        "src/access.cjs"
       ],
       "intent_id": "intent:change_01M7QAHBX4AX4H6TKTH5871P97",
-      "modified_files": [],
+      "modified_files": [
+        ".decapod/managed/specs/ARCHITECTURE.md",
+        ".decapod/managed/specs/INTENT.md",
+        ".decapod/managed/specs/INTERFACES.md",
+        "src/access.cjs"
+      ],
       "next_transitions": [
         "Refine plan and declare falsifiable checks"
       ],

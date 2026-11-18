@@ -128,6 +128,18 @@ Do not assume database transactions, automatic retries, or side-effect rollback.
 | Runtime saturation under peak load | Medium | High | Capacity model + load tests |
 
 
+## Implemented authorization boundary
+
+The product is an isolated JavaScript read-authorization library, not a server.
+`src/access.cjs` exports the synchronous, side-effect-free `canRead` predicate.
+Caller-supplied actor and repository records flow through active-membership and
+organization equality checks, then an owner-ID comparison or array membership
+check against the repository ID. Revocation and foreign organization checks
+precede both alternatives, so ownership cannot bypass them. There is no store,
+network dependency, cache or background worker. Callers own identity verification
+and freshness of membership/grant data. `src/guard.txt` is a separate proof input,
+not runtime authorization state, and remains unchanged.
+
 ## Accepted repository access contract
 
 The application exports canRead(actor, repository) from src/access.cjs. Active
@@ -145,7 +157,7 @@ the new issue-scoped target is independent. Admission never authorizes merge.
 
 ## Codebase Attestation
 
-- Repository signal fingerprint: `4e2cacf2680f182547e1a3cee504514bba559d43ee55e96f8599980ea3113557`
+- Repository signal fingerprint: `e22c2de1cb0f556fed76b9406212387fedec6f3e6e561a22a9b058e7e8b33315`
 - Significant implementation surfaces: `README.md/` (1 files), `src/` (2 files)
 - Refreshed from the current codebase by `decapod rpc --op specs.refresh`
 <!-- decapod:codebase-attestation:end -->
