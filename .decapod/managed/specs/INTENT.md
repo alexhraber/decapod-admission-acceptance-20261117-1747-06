@@ -131,6 +131,18 @@ flowchart LR
 | Which non-functional target is hardest to hit? | TBD | YYYY-MM-DD | |
 
 
+## Baseline investigation (#1758)
+
+The repository is a small JavaScript authorization library for callers deciding
+whether an organization actor may read a repository. `README.md` requires active
+owning-organization membership and either ownership or an explicit repository
+grant. The inspected seeded `src/access.cjs::canRead` currently checks only
+active organization membership; this is an implementation gap, not accepted
+behavior. Before modifying it, execute the unchanged accepted proof commands
+through structured Decapod validation and retain the actual assertion failure.
+A staging/readiness blocker alone does not establish that baseline. Preserve
+`src/guard.txt`, proof declarations, historical refs and PR #1; no merge is in scope.
+
 ## Accepted repository access contract
 
 The application exports canRead(actor, repository) from src/access.cjs. Active
